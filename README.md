@@ -60,7 +60,7 @@ Animaciones atractivas: Incluye animaciones suaves y un efecto de máquina de es
 Responsive Design: Totalmente adaptable a dispositivos móviles y de escritorio.
 Configuración profesional: Incluye ESLint y PostCSS para una mejor calidad de código.
 
-##📧 Contacto
+## 📧 Contacto
 Correo: javidominguez060@gmail.com
 GitHub: @jv-maroto
 LinkedIn: javier-domínguez
