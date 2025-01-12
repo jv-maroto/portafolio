@@ -48,7 +48,8 @@ PORTAFOLIO/
 ├── tailwind.config.js    # Configuración de Tailwind CSS
 ├── eslint.config.js      # Configuración de ESLint
 └── package-lock.json     # Archivo de bloqueo de dependencias
-🚀 Características
+```
+## 🚀 Características
 Interfaz moderna: Diseñada con React y Tailwind CSS para una experiencia de usuario limpia y profesional.
 Secciones:
 About: Información sobre mí.
@@ -58,35 +59,8 @@ Contact: Formulario para establecer contacto.
 Animaciones atractivas: Incluye animaciones suaves y un efecto de máquina de escribir para el texto principal.
 Responsive Design: Totalmente adaptable a dispositivos móviles y de escritorio.
 Configuración profesional: Incluye ESLint y PostCSS para una mejor calidad de código.
-📸 Vista Previa
 
-🌐 Enlace al Portafolio
-El portafolio está disponible en: https://jv-maroto.github.io/portafolio
-
-📝 Instalación y Uso
-Si deseas ejecutar el proyecto localmente, sigue estos pasos:
-
-Clona el repositorio:
-bash
-Copiar código
-git clone https://github.com/jv-maroto/portafolio.git
-Navega al directorio del proyecto:
-bash
-Copiar código
-cd portafolio
-Instala las dependencias:
-bash
-Copiar código
-npm install
-Inicia el servidor de desarrollo:
-bash
-Copiar código
-npm start
-Abre tu navegador en http://localhost:3000.
-🧑‍💻 Contribuciones
-Las contribuciones son bienvenidas. Si deseas mejorar este portafolio o utilizarlo como base para tu propio sitio, no olvides darme crédito. 😊
-
-📧 Contacto
+##📧 Contacto
 Correo: javidominguez060@gmail.com
 GitHub: @jv-maroto
-LinkedIn: Javier Domínguez
+LinkedIn: javier-domínguez
