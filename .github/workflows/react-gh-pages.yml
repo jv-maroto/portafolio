@@ -28,11 +28,10 @@ jobs:
         run: npm install --legacy-peer-deps # Evita conflictos de dependencias
 
       - name: Add missing Babel plugin
-        run: npm install @babel/plugin-proposal-private-property-in-object --save-dev # Instala el plugin faltante
+        run: npm install @babel/plugin-proposal-private-property-in-object --save-dev # Soluciona el problema de Babel
 
       - name: Build project
-        # Desactiva ESLint tratando advertencias como errores
-        run: CI='' npm run build
+        run: CI='' npm run build # Ignora warnings de ESLint durante el build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
