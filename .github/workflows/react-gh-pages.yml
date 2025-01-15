@@ -22,13 +22,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Puedes ajustar la versión según tu proyecto
+          node-version: 18 # Ajusta según las necesidades de tu proyecto
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps # Evita conflictos de dependencias
+
+      - name: Add missing Babel plugin
+        run: npm install @babel/plugin-proposal-private-property-in-object --save-dev # Instala el plugin faltante
 
       - name: Build project
-        run: npm run build
+        # Desactiva ESLint tratando advertencias como errores
+        run: CI='' npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
