@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="60%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#fde047" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#9a3412" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#grid)"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <g font-family="Inter, system-ui, sans-serif" fill="#fff7ed">
+    <text x="80" y="320" font-size="36" font-weight="500" opacity="0.7">Computer vision + media library</text>
+    <text x="80" y="420" font-size="120" font-weight="800" letter-spacing="-3">CineStream</text>
+    <text x="80" y="490" font-size="32" font-weight="500" opacity="0.85">AI scene classification &amp; TMDB metadata</text>
+  </g>
+  <g font-family="JetBrains Mono, ui-monospace, monospace" fill="#fed7aa" font-size="20" font-weight="600" opacity="0.95">
+    <rect x="80" y="560" width="170" height="42" rx="10" fill="#0a0a0a" fill-opacity="0.3" stroke="#fed7aa" stroke-opacity="0.4"/>
+    <text x="100" y="588">FastAPI</text>
+    <rect x="270" y="560" width="155" height="42" rx="10" fill="#0a0a0a" fill-opacity="0.3" stroke="#fed7aa" stroke-opacity="0.4"/>
+    <text x="290" y="588">Celery</text>
+    <rect x="445" y="560" width="170" height="42" rx="10" fill="#0a0a0a" fill-opacity="0.3" stroke="#fed7aa" stroke-opacity="0.4"/>
+    <text x="465" y="588">pgvector</text>
+    <rect x="635" y="560" width="135" height="42" rx="10" fill="#0a0a0a" fill-opacity="0.3" stroke="#fed7aa" stroke-opacity="0.4"/>
+    <text x="655" y="588">YOLO</text>
+  </g>
+</svg>

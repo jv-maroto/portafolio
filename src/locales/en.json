@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "language": "English",
+    "languageShort": "EN"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "stack": "Stack",
+    "experience": "Experience",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme",
+    "toggleLang": "Toggle language",
+    "menu": "Menu"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Javier Maroto",
+    "role": "Full-Stack Python + AI Engineer",
+    "description": "I build production apps from infrastructure to UI. Python, FastAPI, React, local LLMs, Docker. Currently shipping SportEvent, FitDash and WinSvalinn.",
+    "ctaProjects": "View Projects",
+    "ctaCV": "Download CV",
+    "ctaContact": "Contact",
+    "socialGithub": "GitHub",
+    "socialLinkedin": "LinkedIn",
+    "socialEmail": "Email",
+    "scrollHint": "Scroll"
+  },
+  "about": {
+    "title": "About",
+    "kicker": "Who I am",
+    "paragraph": "Full-Stack Engineer focused on Python and AI applications. I design, code and deploy complete products: FastAPI backends, React 19 + TypeScript frontends, PostgreSQL with pgvector, Docker-based infra and local language models with Ollama. I come from the sysadmin world, so I think about scaling, security and observability from day one.",
+    "availability": "Available for remote roles worldwide and on-site opportunities across Europe and Spain.",
+    "stats": {
+      "projects": { "value": "7", "label": "Production projects" },
+      "stacks": { "value": "5+", "label": "Stacks shipped" },
+      "sysadmin": { "value": "2+", "label": "Years sysadmin" },
+      "ai": { "value": "Local", "label": "LLM-powered apps" }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "kicker": "Selected work",
+    "viewCode": "Code",
+    "liveDemo": "Live demo",
+    "list": {
+      "sportevent": {
+        "title": "SportEvent",
+        "description": "Sports event management & ticketing platform. DAW final project (TFG)."
+      },
+      "fitdash": {
+        "title": "FitDash",
+        "description": "Personal fitness dashboard with multimodal local AI agent (text/audio/CSV/photos)."
+      },
+      "winsvalinn": {
+        "title": "WinSvalinn",
+        "description": "Security audit & optimization suite for Windows. 100% local. Free & Enterprise editions."
+      },
+      "cinestream": {
+        "title": "CineStream",
+        "description": "Personal media library with AI scene classification & TMDB metadata."
+      },
+      "portalEmployes": {
+        "title": "Portal-Employes",
+        "description": "Employee portal with payroll, time-off and announcements."
+      },
+      "servidorPi": {
+        "title": "servidor-pi",
+        "description": "Home server on Raspberry Pi 5 with full media stack, custom game finder and Windows agent."
+      },
+      "pyawsPractice": {
+        "title": "PyAWS Practice",
+        "description": "Interview prep tool for AWS Systems Engineer roles."
+      }
+    }
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "kicker": "What I build with",
+    "categories": {
+      "languages": "Languages",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "ai": "AI / ML",
+      "devops": "DevOps",
+      "sysadmin": "Sysadmin",
+      "integrations": "Integrations"
+    }
+  },
+  "experience": {
+    "title": "Experience & Education",
+    "kicker": "Background",
+    "current": "Current",
+    "completed": "Completed",
+    "items": {
+      "sagrera": {
+        "role": "Systems Administrator",
+        "company": "Sagrera Canarias",
+        "period": "Current",
+        "description": "Infrastructure administration, user support, networking and Windows servers. Mon-Fri 8-15h."
+      },
+      "daw": {
+        "role": "Web Application Development (DAW)",
+        "company": "IES Pérez Minik",
+        "period": "Final defense: May 2026",
+        "description": "Higher technical vocational degree. Final project: SportEvent (FastAPI + React 19 + Stripe)."
+      },
+      "asir": {
+        "role": "Systems & Network Administration (ASIR)",
+        "company": "IES Pérez Minik",
+        "period": "Completed",
+        "description": "Higher technical vocational degree in systems, networks and virtualization."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's talk",
+    "kicker": "Get in touch",
+    "intro": "Currently available for remote roles worldwide and on-site opportunities in Europe/Spain.",
+    "location": "Based in Santa Cruz de Tenerife, Canary Islands, Spain",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "downloadCV": "Download CV (PDF)",
+    "sendEmail": "Send email"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built": "Built with Vite, React 19 and Tailwind v4.",
+    "scrollTop": "Back to top"
+  }
+}
