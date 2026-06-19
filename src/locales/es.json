@@ -4,8 +4,8 @@
     "languageShort": "ES"
   },
   "nav": {
+    "work": "Trabajo",
     "about": "Sobre mí",
-    "projects": "Proyectos",
     "stack": "Stack",
     "experience": "Experiencia",
     "contact": "Contacto",
@@ -14,121 +14,143 @@
     "menu": "Menú"
   },
   "hero": {
-    "greeting": "Hola, soy",
+    "status": "Disponible para nuevas oportunidades",
+    "tz": "Tenerife · CET",
     "name": "Javier Maroto",
-    "role": "Full-Stack Python + AI Engineer",
-    "description": "Construyo apps en producción desde la infraestructura hasta la UI. Python, FastAPI, React, LLMs locales y Docker. Actualmente desarrollando SportEvent, FitDash y WinSvalinn.",
-    "ctaProjects": "Ver proyectos",
-    "ctaCV": "Descargar CV",
-    "ctaContact": "Contactar",
-    "socialGithub": "GitHub",
-    "socialLinkedin": "LinkedIn",
-    "socialEmail": "Email",
-    "scrollHint": "Desplázate"
-  },
-  "about": {
-    "title": "Sobre mí",
-    "kicker": "Quién soy",
-    "paragraph": "Ingeniero Full-Stack centrado en Python y aplicaciones de IA. Diseño, programo y despliego productos completos: APIs con FastAPI, frontends en React 19 con TypeScript, bases de datos PostgreSQL con pgvector, infraestructura en Docker y modelos de lenguaje locales con Ollama. Vengo del mundo sysadmin, así que pienso en escalado, seguridad y observabilidad desde el día uno.",
-    "availability": "Disponible para roles remotos en cualquier parte del mundo y oportunidades presenciales en Europa y España.",
+    "role": "Full-Stack Python + AI",
+    "tagline": "Diseño, construyo y despliego producto: desde la infraestructura hasta la última pixel-perfect.",
+    "summary": "Trabajando con FastAPI, React 19, PostgreSQL, Docker y LLMs locales. Vengo del mundo sysadmin, así que escalado y seguridad son parte del flujo, no un parche.",
+    "cta": {
+      "work": "Ver trabajo",
+      "cv": "Descargar CV",
+      "email": "Escríbeme"
+    },
     "stats": {
-      "projects": { "value": "7", "label": "Proyectos en producción" },
-      "stacks": { "value": "5+", "label": "Stacks shipped" },
-      "sysadmin": { "value": "2+", "label": "Años como sysadmin" },
-      "ai": { "value": "Local", "label": "Apps con LLMs locales" }
+      "production": { "value": "7", "label": "Apps en producción" },
+      "stacks":     { "value": "5+", "label": "Stacks shipped" },
+      "sysadmin":   { "value": "2+", "label": "Años sysadmin" },
+      "ai":         { "value": "Local", "label": "Stack IA local" }
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "schedule": "Agendar"
     }
   },
-  "projects": {
-    "title": "Proyectos destacados",
+  "work": {
     "kicker": "Trabajo seleccionado",
+    "title": "Productos en los que estoy",
+    "subtitle": "Siete apps, una persona. Cada tarjeta es un repositorio público con código real.",
     "viewCode": "Código",
-    "liveDemo": "Demo en vivo",
+    "liveDemo": "Demo",
     "list": {
       "sportevent": {
         "title": "SportEvent",
-        "description": "Plataforma de gestión y ticketing de eventos deportivos. Proyecto final del ciclo DAW."
-      },
-      "fitdash": {
-        "title": "FitDash",
-        "description": "Dashboard personal de fitness con agente IA local multimodal (texto, audio, CSV y fotos)."
+        "description": "Plataforma de gestión y ticketing de eventos deportivos. TFG del ciclo DAW — defensa mayo 2026."
       },
       "winsvalinn": {
         "title": "WinSvalinn",
-        "description": "Suite de auditoría y optimización de seguridad para Windows. 100% local. Ediciones Free y Empresarial."
+        "description": "Auditor de seguridad y optimizador para Windows. 100% local, Tauri + Python sidecar. Ediciones Free y Empresarial."
+      },
+      "fitdash": {
+        "title": "FitDash",
+        "description": "Dashboard de fitness con agente IA local multimodal (texto, audio, fotos, CSV) por Telegram."
       },
       "cinestream": {
         "title": "CineStream",
-        "description": "Biblioteca multimedia personal con clasificación de escenas por IA y metadatos de TMDB."
+        "description": "Biblioteca multimedia con clasificación de escenas (YOLO) y embeddings vectoriales en pgvector."
       },
       "portalEmployes": {
         "title": "Portal-Employes",
-        "description": "Portal de empleados con nóminas, gestión de ausencias y anuncios internos."
+        "description": "Portal de empleados con nóminas, ausencias y anuncios internos. En producción."
       },
       "servidorPi": {
         "title": "servidor-pi",
-        "description": "Home server en Raspberry Pi 5 con stack media completo, buscador de juegos custom y agente Windows."
+        "description": "Home server en Raspberry Pi 5: stack media completo, buscador de juegos custom y agente Windows."
       },
       "pyawsPractice": {
         "title": "PyAWS Practice",
-        "description": "Herramienta personal de preparación para entrevistas de AWS Systems Engineer."
+        "description": "Herramienta personal de práctica para entrevistas AWS Systems Engineer."
       }
     }
   },
   "stack": {
-    "title": "Stack técnico",
-    "kicker": "Con lo que construyo",
+    "kicker": "Caja de herramientas",
+    "title": "Lo que uso para construir",
+    "subtitle": "Pragma > moda. Si no sirve en producción, no entra al stack.",
     "categories": {
       "languages": "Lenguajes",
       "backend": "Backend",
       "frontend": "Frontend",
-      "databases": "Bases de datos",
+      "databases": "Datos",
       "ai": "IA / ML",
       "devops": "DevOps",
       "sysadmin": "Sysadmin",
       "integrations": "Integraciones"
     }
   },
+  "about": {
+    "kicker": "Sobre mí",
+    "title": "Ingeniero antes que developer.",
+    "paragraph": "Soy Javier, Full-Stack centrado en Python e IA. Diseño, programo y despliego producto entero: APIs en FastAPI, frontends en React 19 + TypeScript, PostgreSQL con pgvector, infra en Docker y LLMs locales con Ollama. Vengo del mundo sysadmin, así que pienso en escalado, seguridad y observabilidad desde el primer commit.",
+    "languages": "Idiomas",
+    "spanish": "Español — Nativo",
+    "english": "Inglés — Profesional (B1)",
+    "based": "Basado en Tenerife · disponible remoto worldwide y presencial en Europa."
+  },
   "experience": {
-    "title": "Experiencia y formación",
     "kicker": "Trayectoria",
-    "current": "Actualmente",
+    "title": "Experiencia y formación",
+    "current": "Actual",
     "completed": "Completado",
     "items": {
       "sagrera": {
         "role": "Administrador de Sistemas",
         "company": "Sagrera Canarias",
-        "period": "Actual",
-        "description": "Administración de infraestructura, soporte de usuarios, redes y servidores Windows. L-V 8-15h."
+        "period": "Sep 2024 — Actual",
+        "description": "Infraestructura Linux y Windows Server, redes, auditoría de seguridad y soporte interno."
       },
       "daw": {
         "role": "Desarrollo de Aplicaciones Web (DAW)",
         "company": "IES Pérez Minik",
-        "period": "Defensa: mayo 2026",
-        "description": "Ciclo formativo de grado superior. TFG: SportEvent (FastAPI + React 19 + Stripe)."
+        "period": "Completado 2026",
+        "description": "Ciclo superior. TFG: SportEvent (FastAPI + React 19 + Stripe)."
+      },
+      "ciso": {
+        "role": "Certificado CISO",
+        "company": "Nayan School",
+        "period": "2025",
+        "description": "Formación en seguridad IT para empresas (Chief Information Security Officer)."
       },
       "asir": {
         "role": "Administración de Sistemas en Red (ASIR)",
         "company": "IES Pérez Minik",
         "period": "Completado",
-        "description": "Ciclo formativo de grado superior en sistemas, redes y virtualización."
+        "description": "Ciclo superior en sistemas, redes y virtualización."
       }
     }
   },
   "contact": {
-    "title": "Hablemos",
-    "kicker": "Contacto",
-    "intro": "Actualmente disponible para roles remotos en cualquier parte del mundo y oportunidades presenciales en Europa y España.",
-    "location": "Basado en Santa Cruz de Tenerife, Islas Canarias, España",
+    "kicker": "Hablemos",
+    "title": "¿Construimos algo?",
+    "intro": "Disponible para roles remotos en todo el mundo y oportunidades presenciales en Europa y España. Respondo el mismo día.",
     "email": "Email",
-    "phone": "Teléfono",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "downloadCV": "Descargar CV (PDF)",
-    "sendEmail": "Enviar email"
+    "schedule": "Agendar 30 min",
+    "scheduleNote": "Calendly · vía email",
+    "downloadCV": "Descargar CV",
+    "shareTitle": "Comparte este portfolio",
+    "shareSubtitle": "Escanea el QR o copia el enlace.",
+    "shareCopy": "Copiar enlace",
+    "shareCopied": "Copiado",
+    "shareSystem": "Compartir"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
-    "built": "Construido con Vite, React 19 y Tailwind v4.",
-    "scrollTop": "Volver arriba"
+    "built": "Construido con Vite, React 19, Tailwind v4 y mucho café canario.",
+    "scrollTop": "Volver arriba",
+    "viewSource": "Código fuente"
   }
 }

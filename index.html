@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portafolio/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark light" />
 
     <title>Javier Maroto — Full-Stack Python + AI Engineer</title>
     <meta
@@ -16,6 +17,8 @@
       content="Javier Maroto, Full-Stack, Python, FastAPI, React, AI Engineer, Ollama, Docker, PostgreSQL, Tenerife, Spain, remote developer"
     />
     <meta name="author" content="Javier José Maroto Domínguez" />
+
+    <link rel="canonical" href="https://jv-maroto.github.io/portafolio/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Javier Maroto — Full-Stack Python + AI Engineer" />
@@ -39,9 +42,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      // Pre-paint theme application to avoid flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem('jm-portafolio-theme');
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+          var root = document.documentElement;
+          root.classList.add(theme);
+          if (theme === 'light') root.classList.remove('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

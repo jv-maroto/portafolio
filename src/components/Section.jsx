@@ -1,25 +1,32 @@
-import { motion } from 'framer-motion'
+import { cn } from '../lib/cn'
 
-export default function Section({ id, kicker, title, children, className = '' }) {
+export default function Section({ id, kicker, title, subtitle, children, className = '', headingClass = '' }) {
   return (
-    <section id={id} className={`relative py-20 sm:py-28 ${className}`}>
+    <section id={id} className={cn('relative py-24 sm:py-28', className)}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
+        <div className="mb-12 reveal max-w-3xl">
           {kicker && (
-            <p className="text-sm font-semibold uppercase tracking-wider text-brand-500 dark:text-brand-400">
+            <div className="flex items-center gap-3 text-mono text-[11px] uppercase tracking-[0.25em] text-[color:var(--fg-dim)]">
+              <span aria-hidden="true" className="inline-block h-px w-8 bg-[color:var(--fg-dim)]/40" />
               {kicker}
+            </div>
+          )}
+          {title && (
+            <h2
+              className={cn(
+                'text-display mt-5 text-[clamp(2rem,4.4vw,3.4rem)] text-[color:var(--fg-bright)]',
+                headingClass,
+              )}
+            >
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--fg-mid)]">
+              {subtitle}
             </p>
           )}
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
-            {title}
-          </h2>
-        </motion.div>
+        </div>
         {children}
       </div>
     </section>

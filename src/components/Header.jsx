@@ -1,123 +1,198 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Moon, Sun, Languages, Menu, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
+import { cn } from '../lib/cn'
 
-const SECTIONS = ['about', 'projects', 'stack', 'experience', 'contact']
+const SECTIONS = ['work', 'about', 'stack', 'contact']
 
 export default function Header() {
   const { t, i18n } = useTranslation()
   const { theme, toggle } = useTheme()
   const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('work')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
+    const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
-    // Lock scroll while mobile menu is open
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
-  }, [mobileOpen])
+  }, [open])
 
-  const toggleLang = () => {
+  useEffect(() => {
+    const ids = SECTIONS.map((s) => document.getElementById(s)).filter(Boolean)
+    if (!ids.length) return
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -50% 0px' },
+    )
+    ids.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
+  const switchLang = () => {
     const next = i18n.language === 'es' ? 'en' : 'es'
     i18n.changeLanguage(next)
   }
 
-  const close = () => setMobileOpen(false)
-
   return (
     <header
-      className={[
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'backdrop-blur-xl bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-white/10'
-          : 'bg-transparent border-b border-transparent',
-      ].join(' ')}
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 transition-all duration-500',
+        scrolled ? 'py-2' : 'py-4',
+      )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a
-          href="#top"
-          className="group flex items-center gap-2 font-bold tracking-tight"
-          aria-label="Javier Maroto - Home"
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div
+          className={cn(
+            'flex h-14 items-center justify-between rounded-full px-3 transition-all duration-500 sm:px-5',
+            scrolled
+              ? 'glass'
+              : 'border border-transparent bg-transparent',
+          )}
+          style={scrolled ? { borderRadius: 9999 } : undefined}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-transform group-hover:scale-105">
-            JM
-          </span>
-          <span className="hidden text-sm font-semibold text-neutral-900 dark:text-neutral-100 sm:inline">
-            Javier Maroto
-          </span>
-        </a>
-
-        <nav className="hidden items-center gap-1 md:flex">
-          {SECTIONS.map((id) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              className="rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:text-brand-600 dark:text-neutral-300 dark:hover:text-brand-400"
-            >
-              {t(`nav.${id}`)}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="flex items-center gap-1.5 rounded-md border border-neutral-200/70 px-2.5 py-1.5 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:text-neutral-200 dark:hover:bg-white/5"
-            aria-label={t('nav.toggleLang')}
-            title={t('nav.toggleLang')}
+          <a
+            href="#top"
+            className="group flex items-center gap-2.5"
+            aria-label="Javier Maroto - Home"
           >
-            <Languages size={14} />
-            <span className="uppercase">{i18n.language}</span>
-          </button>
+            <Sigil />
+            <span className="hidden text-sm font-semibold tracking-tight text-[color:var(--fg-bright)] sm:inline">
+              Javier Maroto
+            </span>
+          </a>
 
-          <button
-            type="button"
-            onClick={toggle}
-            className="rounded-md border border-neutral-200/70 p-2 text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:text-neutral-200 dark:hover:bg-white/5"
-            aria-label={t('nav.toggleTheme')}
-            title={t('nav.toggleTheme')}
-          >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setMobileOpen((v) => !v)}
-            className="ml-1 rounded-md border border-neutral-200/70 p-2 text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:text-neutral-200 dark:hover:bg-white/5 md:hidden"
-            aria-label={t('nav.menu')}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X size={16} /> : <Menu size={16} />}
-          </button>
-        </div>
-      </div>
-
-      {mobileOpen && (
-        <div className="border-t border-neutral-200/60 bg-white/90 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-950/90 md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
+          <nav className="hidden items-center gap-6 md:flex">
             {SECTIONS.map((id) => (
               <a
                 key={id}
                 href={`#${id}`}
-                onClick={close}
-                className="rounded-md px-3 py-2 text-sm font-medium text-neutral-800 transition-colors hover:bg-neutral-100 dark:text-neutral-100 dark:hover:bg-white/5"
+                data-active={active === id}
+                className="nav-item text-mono text-[12px] uppercase tracking-[0.18em] text-[color:var(--fg-dim)] transition-colors hover:text-[color:var(--fg-bright)] data-[active=true]:text-[color:var(--fg-bright)]"
               >
                 {t(`nav.${id}`)}
               </a>
             ))}
           </nav>
+
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={switchLang}
+              className="text-mono inline-flex h-8 w-9 items-center justify-center rounded-full border border-[color:var(--border-glass)] bg-[color:var(--bg-2)]/60 text-[10px] font-semibold uppercase tracking-widest text-[color:var(--fg-mid)] transition-colors hover:border-[color:var(--accent)]/40 hover:text-[color:var(--fg-bright)]"
+              aria-label={t('nav.toggleLang')}
+              title={t('nav.toggleLang')}
+            >
+              {i18n.language}
+            </button>
+
+            <button
+              type="button"
+              onClick={toggle}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--border-glass)] bg-[color:var(--bg-2)]/60 text-[color:var(--fg-mid)] transition-colors hover:border-[color:var(--accent)]/40 hover:text-[color:var(--fg-bright)]"
+              aria-label={t('nav.toggleTheme')}
+              title={t('nav.toggleTheme')}
+            >
+              {theme === 'dark' ? <IconSun /> : <IconMoon />}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--border-glass)] bg-[color:var(--bg-2)]/60 text-[color:var(--fg-mid)] transition-colors hover:text-[color:var(--fg-bright)] md:hidden"
+              aria-label={t('nav.menu')}
+              aria-expanded={open}
+            >
+              {open ? <IconClose /> : <IconMenu />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {open && (
+        <div className="mx-auto mt-3 max-w-6xl px-4 sm:px-6 md:hidden">
+          <div className="glass overflow-hidden rounded-3xl p-2">
+            <nav className="flex flex-col">
+              {SECTIONS.map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={() => setOpen(false)}
+                  className="rounded-2xl px-4 py-3 text-mono text-xs uppercase tracking-widest text-[color:var(--fg-mid)] transition-colors hover:bg-[color:var(--bg-2)] hover:text-[color:var(--fg-bright)]"
+                >
+                  {t(`nav.${id}`)}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       )}
     </header>
+  )
+}
+
+function Sigil() {
+  // Custom "JM" sigil — built with SVG strokes, no gradient mess.
+  return (
+    <span
+      className="grid h-9 w-9 place-items-center rounded-full border border-[color:var(--border-glass-strong)] bg-[color:var(--bg-2)] text-[color:var(--accent)] transition-transform group-hover:rotate-3"
+      aria-hidden="true"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 4v12a4 4 0 0 1-4 4" transform="translate(4 0)" />
+        <path d="M11 20V4l4 7 4-7v16" />
+      </svg>
+    </span>
+  )
+}
+
+function IconSun() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3.5" />
+      <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.95-7L16.6 6.4M7.5 16.6 6 18m0-12 1.5 1.4M16.6 17.6l1.4 1.4" />
+    </svg>
+  )
+}
+function IconMoon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" />
+    </svg>
+  )
+}
+function IconMenu() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  )
+}
+function IconClose() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
   )
 }

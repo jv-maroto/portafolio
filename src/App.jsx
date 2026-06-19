@@ -1,22 +1,26 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
+import Work from './components/Work'
 import Stack from './components/Stack'
-import Experience from './components/Experience'
+import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Background from './components/Background'
+import { useReveal } from './hooks/useReveal'
 
 function App() {
+  // Activate reveal-on-scroll across the page.
+  useReveal()
+
   return (
-    <div className="relative min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <div className="relative min-h-screen overflow-x-hidden">
+      <Background />
       <Header />
-      <main>
+      <main className="relative z-10">
         <Hero />
-        <About />
-        <Projects />
+        <Work />
         <Stack />
-        <Experience />
+        <About />
         <Contact />
       </main>
       <Footer />

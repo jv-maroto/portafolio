@@ -4,8 +4,8 @@
     "languageShort": "EN"
   },
   "nav": {
+    "work": "Work",
     "about": "About",
-    "projects": "Projects",
     "stack": "Stack",
     "experience": "Experience",
     "contact": "Contact",
@@ -14,97 +14,114 @@
     "menu": "Menu"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "status": "Open to new opportunities",
+    "tz": "Tenerife · CET",
     "name": "Javier Maroto",
-    "role": "Full-Stack Python + AI Engineer",
-    "description": "I build production apps from infrastructure to UI. Python, FastAPI, React, local LLMs, Docker. Currently shipping SportEvent, FitDash and WinSvalinn.",
-    "ctaProjects": "View Projects",
-    "ctaCV": "Download CV",
-    "ctaContact": "Contact",
-    "socialGithub": "GitHub",
-    "socialLinkedin": "LinkedIn",
-    "socialEmail": "Email",
-    "scrollHint": "Scroll"
-  },
-  "about": {
-    "title": "About",
-    "kicker": "Who I am",
-    "paragraph": "Full-Stack Engineer focused on Python and AI applications. I design, code and deploy complete products: FastAPI backends, React 19 + TypeScript frontends, PostgreSQL with pgvector, Docker-based infra and local language models with Ollama. I come from the sysadmin world, so I think about scaling, security and observability from day one.",
-    "availability": "Available for remote roles worldwide and on-site opportunities across Europe and Spain.",
+    "role": "Full-Stack Python + AI",
+    "tagline": "I design, build and ship product end-to-end — from the infra to the last pixel.",
+    "summary": "Working with FastAPI, React 19, PostgreSQL, Docker and local LLMs. Coming from a sysadmin background, so scaling and security ride with the code, not after it.",
+    "cta": {
+      "work": "See work",
+      "cv": "Download CV",
+      "email": "Get in touch"
+    },
     "stats": {
-      "projects": { "value": "7", "label": "Production projects" },
-      "stacks": { "value": "5+", "label": "Stacks shipped" },
-      "sysadmin": { "value": "2+", "label": "Years sysadmin" },
-      "ai": { "value": "Local", "label": "LLM-powered apps" }
+      "production": { "value": "7", "label": "Production apps" },
+      "stacks":     { "value": "5+", "label": "Stacks shipped" },
+      "sysadmin":   { "value": "2+", "label": "Years sysadmin" },
+      "ai":         { "value": "Local", "label": "Local AI stack" }
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "schedule": "Schedule"
     }
   },
-  "projects": {
-    "title": "Featured Projects",
+  "work": {
     "kicker": "Selected work",
+    "title": "Products I am building",
+    "subtitle": "Seven apps, one person. Every card is a public repository with real code.",
     "viewCode": "Code",
-    "liveDemo": "Live demo",
+    "liveDemo": "Live",
     "list": {
       "sportevent": {
         "title": "SportEvent",
-        "description": "Sports event management & ticketing platform. DAW final project (TFG)."
-      },
-      "fitdash": {
-        "title": "FitDash",
-        "description": "Personal fitness dashboard with multimodal local AI agent (text/audio/CSV/photos)."
+        "description": "Sports event management & ticketing platform. DAW final project — defense May 2026."
       },
       "winsvalinn": {
         "title": "WinSvalinn",
-        "description": "Security audit & optimization suite for Windows. 100% local. Free & Enterprise editions."
+        "description": "Security auditor & optimizer for Windows. 100% local, Tauri + Python sidecar. Free and Enterprise editions."
+      },
+      "fitdash": {
+        "title": "FitDash",
+        "description": "Fitness dashboard with a local multimodal AI agent (text, audio, photos, CSV) over Telegram."
       },
       "cinestream": {
         "title": "CineStream",
-        "description": "Personal media library with AI scene classification & TMDB metadata."
+        "description": "Personal media library with AI scene classification (YOLO) and pgvector embeddings."
       },
       "portalEmployes": {
         "title": "Portal-Employes",
-        "description": "Employee portal with payroll, time-off and announcements."
+        "description": "Employee portal with payroll, time-off and announcements. In production."
       },
       "servidorPi": {
         "title": "servidor-pi",
-        "description": "Home server on Raspberry Pi 5 with full media stack, custom game finder and Windows agent."
+        "description": "Home server on Raspberry Pi 5: full media stack, custom game finder and Windows agent."
       },
       "pyawsPractice": {
         "title": "PyAWS Practice",
-        "description": "Interview prep tool for AWS Systems Engineer roles."
+        "description": "Personal prep tool for AWS Systems Engineer interviews."
       }
     }
   },
   "stack": {
-    "title": "Tech Stack",
-    "kicker": "What I build with",
+    "kicker": "Toolbox",
+    "title": "What I build with",
+    "subtitle": "Pragma over hype. If it does not ship, it does not enter the stack.",
     "categories": {
       "languages": "Languages",
       "backend": "Backend",
       "frontend": "Frontend",
-      "databases": "Databases",
+      "databases": "Data",
       "ai": "AI / ML",
       "devops": "DevOps",
       "sysadmin": "Sysadmin",
       "integrations": "Integrations"
     }
   },
+  "about": {
+    "kicker": "About",
+    "title": "Engineer before developer.",
+    "paragraph": "I am Javier, a Full-Stack engineer focused on Python and AI. I design, code and ship full products: FastAPI backends, React 19 + TypeScript frontends, PostgreSQL with pgvector, Docker-based infra and local LLMs with Ollama. With a sysadmin background, scaling, security and observability ride alongside the code from commit one.",
+    "languages": "Languages",
+    "spanish": "Spanish — Native",
+    "english": "English — Working (B1)",
+    "based": "Based in Tenerife · available remote worldwide and on-site across Europe."
+  },
   "experience": {
-    "title": "Experience & Education",
     "kicker": "Background",
+    "title": "Experience & education",
     "current": "Current",
     "completed": "Completed",
     "items": {
       "sagrera": {
         "role": "Systems Administrator",
         "company": "Sagrera Canarias",
-        "period": "Current",
-        "description": "Infrastructure administration, user support, networking and Windows servers. Mon-Fri 8-15h."
+        "period": "Sep 2024 — Present",
+        "description": "Linux and Windows Server infrastructure, networking, internal security auditing and support."
       },
       "daw": {
         "role": "Web Application Development (DAW)",
         "company": "IES Pérez Minik",
-        "period": "Final defense: May 2026",
+        "period": "Completed 2026",
         "description": "Higher technical vocational degree. Final project: SportEvent (FastAPI + React 19 + Stripe)."
+      },
+      "ciso": {
+        "role": "CISO Certificate",
+        "company": "Nayan School",
+        "period": "2025",
+        "description": "Corporate IT Security Training (Chief Information Security Officer)."
       },
       "asir": {
         "role": "Systems & Network Administration (ASIR)",
@@ -115,20 +132,25 @@
     }
   },
   "contact": {
-    "title": "Let's talk",
-    "kicker": "Get in touch",
-    "intro": "Currently available for remote roles worldwide and on-site opportunities in Europe/Spain.",
-    "location": "Based in Santa Cruz de Tenerife, Canary Islands, Spain",
+    "kicker": "Let's talk",
+    "title": "Want to build something?",
+    "intro": "Available for remote roles worldwide and on-site opportunities in Europe and Spain. Same-day reply.",
     "email": "Email",
-    "phone": "Phone",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "downloadCV": "Download CV (PDF)",
-    "sendEmail": "Send email"
+    "schedule": "Book 30 min",
+    "scheduleNote": "Calendly · via email",
+    "downloadCV": "Download CV",
+    "shareTitle": "Share this portfolio",
+    "shareSubtitle": "Scan the QR or copy the link.",
+    "shareCopy": "Copy link",
+    "shareCopied": "Copied",
+    "shareSystem": "Share"
   },
   "footer": {
     "rights": "All rights reserved.",
-    "built": "Built with Vite, React 19 and Tailwind v4.",
-    "scrollTop": "Back to top"
+    "built": "Built with Vite, React 19, Tailwind v4 and a lot of canarian coffee.",
+    "scrollTop": "Back to top",
+    "viewSource": "Source"
   }
 }
