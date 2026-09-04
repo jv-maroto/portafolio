@@ -51,24 +51,49 @@ Vite 8 requiere Node 20.19 o superior.
 
 ## Tablero "Ahora mismo"
 
-El hero muestra `public/now.json`: servidor, uptime, contenedores y que
-se esta aprendiendo. El ultimo push se lee de la API publica de GitHub en
-el navegador. Los campos a `null` se muestran como "sin datos": no se
-inventa nada.
+El hero muestra un panel estilo `neofetch`. Sus datos salen de dos sitios:
 
-Para mantenerlo al dia desde la Raspberry Pi, `scripts/update-now.sh`
-escribe el archivo y hace commit. Un cron diario basta:
+- `public/now.json`, que el navegador lee **de la rama main en GitHub**
+  (`raw.githubusercontent.com/.../main/public/now.json`). Por eso basta con
+  hacer push del archivo para que cambie el tablero: no hace falta
+  volver a publicar la web. El archivo local es el respaldo si GitHub no
+  responde.
+- La API publica de GitHub, para "ultimo push": el repo con `pushed_at`
+  mas reciente. Es automatico.
+
+Campos de `now.json`:
+
+| Campo | Quien lo rellena | Como |
+|---|---|---|
+| `server.host`, `server.os` | El script en la Pi | `hostname` y `/etc/os-release` |
+| `server.uptime` | El script en la Pi | `uptime -p` |
+| `server.containers` | El script en la Pi | `docker ps -q \| wc -l` |
+| `learning.es` / `learning.en` | Tu, a mano | Variables al principio del script, o editando el JSON |
+| `playing` | Tu, a mano | Igual. Vacio o `null` muestra "sin datos" |
+| `updated` | El script | Fecha UTC de la ultima ejecucion |
+
+Para que la Pi lo mantenga al dia, clona el repo en ella con una clave de
+despliegue con permiso de escritura y pon `scripts/update-now.sh` en cron:
 
 ```
-0 7 * * * /ruta/al/repo/scripts/update-now.sh
+0 7 * * * /home/pi/portafolio/scripts/update-now.sh
 ```
+
+Si no quieres cron todavia, edita `public/now.json` a mano y haz push:
+el tablero cambia en el siguiente refresco.
 
 ## Contenido pendiente de Javier
 
 - Casos de estudio de SportEvent, FitDash y WinSvalinn: los campos
   `case.problem`, `case.decision` y `case.result` de cada uno en
   `src/locales/*.json` estan vacios y no se muestran hasta rellenarlos.
-- Repasar los textos de `hero`, `about` y `contact` para que suenen a el.
+- Repasar los textos de `hero`, `about`, `homelab` y `contact`.
+- JobHunter no tiene captura: con una en
+  `public/screenshots/projects/jobhunter.webp` y `featured: true` en
+  `src/data/projects.js` pasa a destacado.
+- Los repos `sportevent`, `servidor-pi` y `pyaws-practice` son privados o
+  no existen: por eso no tienen enlace a codigo. Si se hacen publicos,
+  basta con poner la URL en `src/data/projects.js`.
 
 Las capturas (`public/screenshots/projects/*.webp`) y los dos CV
 (`public/cv/`, uno por idioma) vienen de la version publicada anterior.
