@@ -3,7 +3,7 @@ import Section from './Section'
 import { socials } from '../data/socials'
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   return (
     <Section id="contact" title={t('contact.title')}>
       <p className="max-w-[60ch] text-lg text-ink-2">{t('contact.intro')}</p>
@@ -22,7 +22,7 @@ export default function Contact() {
         <a href={socials.linkedin} target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
-        <a href={socials.cv} download>
+        <a href={socials.cv[i18n.language] || socials.cv.en} download>
           {t('contact.downloadCV')}
         </a>
       </p>
