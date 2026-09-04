@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const BASE = import.meta.env.BASE_URL
-const GITHUB_EVENTS = 'https://api.github.com/users/jv-maroto/events/public'
+// now.json se lee de la rama main en GitHub: la Pi hace push y el tablero
+// cambia sin volver a publicar la web. El archivo local es el respaldo.
+const NOW_REMOTE = 'https://raw.githubusercontent.com/jv-maroto/portafolio/main/public/now.json'
+// El feed de eventos publicos no es fiable (a veces va vacio); la lista de
+// repos ordenada por push si lo es.
+const GITHUB_REPOS = 'https://api.github.com/users/jv-maroto/repos?sort=pushed&per_page=1'
 
 // Estilo neofetch: logo ASCII a la izquierda, clave/valor a la derecha.
 // Datos reales de now.json y de la API publica de GitHub. Lo que no se
@@ -30,16 +35,18 @@ function useNowData() {
   const [push, setPush] = useState(null)
 
   useEffect(() => {
-    fetch(`${BASE}now.json`)
-      .then((r) => (r.ok ? r.json() : null))
+    const local = () => fetch(`${BASE}now.json`).then((r) => (r.ok ? r.json() : null))
+    fetch(NOW_REMOTE, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : local()))
+      .catch(local)
       .then(setNow)
       .catch(() => setNow(null))
 
-    fetch(GITHUB_EVENTS)
+    fetch(GITHUB_REPOS)
       .then((r) => (r.ok ? r.json() : []))
-      .then((events) => {
-        const last = Array.isArray(events) ? events.find((e) => e.type === 'PushEvent') : null
-        if (last) setPush({ repo: last.repo.name.split('/')[1], at: last.created_at })
+      .then((repos) => {
+        const last = Array.isArray(repos) ? repos[0] : null
+        if (last) setPush({ repo: last.name, at: last.pushed_at })
       })
       .catch(() => setPush(null))
   }, [])

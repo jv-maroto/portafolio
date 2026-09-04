@@ -10,22 +10,26 @@ UPTIME="$(uptime -p | sed 's/^up //')"
 CONTAINERS="$(docker ps -q 2>/dev/null | wc -l | tr -d ' ')"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-# Lo que se esta aprendiendo se edita a mano aqui; el resto lo mide el script.
+# Estas tres lineas se editan a mano; el resto lo mide el script.
 LEARNING_ES="Scroll-driven animations y View Transitions"
 LEARNING_EN="Scroll-driven animations and View Transitions"
+PLAYING=""   # por ejemplo: "Hades II". Vacio = sin datos.
+OS_NAME="$(. /etc/os-release 2>/dev/null && echo "$PRETTY_NAME" || echo Debian)"
 
 cat > "$OUT" <<JSON
 {
   "updated": "$NOW",
   "server": {
     "host": "$HOST",
+    "os": "$OS_NAME",
     "uptime": "$UPTIME",
     "containers": $CONTAINERS
   },
   "learning": {
     "es": "$LEARNING_ES",
     "en": "$LEARNING_EN"
-  }
+  },
+  "playing": $( [ -n "$PLAYING" ] && printf '"%s"' "$PLAYING" || echo null )
 }
 JSON
 

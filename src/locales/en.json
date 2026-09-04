@@ -11,8 +11,7 @@
   },
   "homelab": {
     "title": "What runs at home",
-    "intro": "A Raspberry Pi 5 works as media server, ad blocker, library and test bench. Everything in containers, everything documented in the repository.",
-    "repo": "Full configuration on GitHub",
+    "intro": "A Raspberry Pi 5 works as media server, ad blocker, library and test bench. Everything in containers, brought up from a single Docker Compose file.",
     "services": {
       "pi5": "The server. Runs everything else.",
       "docker": "Each service in its own container, one file brings everything up.",
@@ -60,17 +59,29 @@
       "sportevent": {
         "title": "SportEvent",
         "description": "Management and ticketing platform for sports events. Final project of the DAW degree.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "fitdash": {
         "title": "FitDash",
         "description": "Personal fitness dashboard with a local AI agent that understands text, audio, CSV and photos.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "winsvalinn": {
         "title": "WinSvalinn",
         "description": "Security audit and hardening suite for Windows. Fully local, Free and Enterprise editions.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "cinestream": {
         "title": "CineStream",
@@ -87,8 +98,17 @@
       "pyawsPractice": {
         "title": "PyAWS Practice",
         "description": "Interview preparation tool for AWS Systems Engineer roles."
+      },
+      "jobhunter": {
+        "title": "JobHunter",
+        "description": "Self-hosted job search: scrapes job boards, scores every offer against your CV with the model you choose (Anthropic, OpenAI, Gemini or local Ollama), prepares tailored CVs and cover letters, and fills application forms through a Chrome extension."
+      },
+      "fitnessAppPro": {
+        "title": "Fitness App Pro",
+        "description": "Weight and nutrition tracking with moving averages, a bulking planner and basal metabolism and daily expenditure calculations."
       }
-    }
+    },
+    "wip": "in progress"
   },
   "stack": {
     "title": "What I work with",

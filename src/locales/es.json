@@ -11,8 +11,7 @@
   },
   "homelab": {
     "title": "Lo que corre en casa",
-    "intro": "Una Raspberry Pi 5 hace de servidor multimedia, bloqueador de anuncios, biblioteca y banco de pruebas. Todo en contenedores y todo documentado en el repositorio.",
-    "repo": "Ver la configuración completa en GitHub",
+    "intro": "Una Raspberry Pi 5 hace de servidor multimedia, bloqueador de anuncios, biblioteca y banco de pruebas. Todo en contenedores, levantado desde un único archivo de Docker Compose.",
     "services": {
       "pi5": "El servidor. Corre todo lo demás.",
       "docker": "Cada servicio en su contenedor, con un único archivo que levanta todo.",
@@ -60,17 +59,29 @@
       "sportevent": {
         "title": "SportEvent",
         "description": "Plataforma de gestión y venta de entradas para eventos deportivos. Proyecto final del ciclo DAW.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "fitdash": {
         "title": "FitDash",
         "description": "Panel personal de fitness con un agente de IA local que entiende texto, audio, CSV y fotos.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "winsvalinn": {
         "title": "WinSvalinn",
         "description": "Auditoría y endurecimiento de seguridad para Windows. Todo en local, ediciones Free y Empresarial.",
-        "case": { "problem": "", "decision": "", "result": "" }
+        "case": {
+          "problem": "",
+          "decision": "",
+          "result": ""
+        }
       },
       "cinestream": {
         "title": "CineStream",
@@ -87,8 +98,17 @@
       "pyawsPractice": {
         "title": "PyAWS Practice",
         "description": "Herramienta de preparación para entrevistas de AWS Systems Engineer."
+      },
+      "jobhunter": {
+        "title": "JobHunter",
+        "description": "Buscador de empleo autoalojado: rastrea portales, puntúa cada oferta contra tu CV con el modelo que elijas (Anthropic, OpenAI, Gemini u Ollama en local), prepara CV y carta a medida y rellena formularios con una extensión de Chrome."
+      },
+      "fitnessAppPro": {
+        "title": "Fitness App Pro",
+        "description": "Seguimiento de peso y nutrición con medias móviles, planificador de volumen y cálculo de metabolismo basal y gasto diario."
       }
-    }
+    },
+    "wip": "en desarrollo"
   },
   "stack": {
     "title": "Con lo que trabajo",
