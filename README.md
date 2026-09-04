@@ -1,8 +1,9 @@
 # Portafolio - Javier Maroto
 
-Portfolio personal de Javier Jose Maroto Dominguez.
+**https://jv-maroto.github.io/portafolio/**
 
-Live: <https://jv-maroto.github.io/portafolio/>
+Portfolio personal de Javier Jose Maroto Dominguez: administrador de sistemas
+y desarrollador full-stack Python en Tenerife.
 
 ## Stack
 
@@ -42,10 +43,16 @@ npm run dev        # http://localhost:5173/portafolio/
 npm run build
 npm run preview
 npm run lint
-npm run deploy     # publica dist/ en la rama gh-pages
 ```
 
 Vite 8 requiere Node 20.19 o superior.
+
+## Publicacion
+
+Automatica: cada push a `main` ejecuta `.github/workflows/deploy.yml`, que
+construye con Node 22 y sube `dist/` a la rama `gh-pages`, la que sirve
+GitHub Pages. No hay que hacer nada mas. `npm run deploy` sigue existiendo
+como via manual de emergencia.
 
 ## Tablero "neofetch"
 
