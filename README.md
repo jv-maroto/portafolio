@@ -27,13 +27,11 @@ src/
   locales/           # es.json, en.json (todo el texto visible)
   index.css          # tokens @theme, @font-face, estilos base
 public/
-  now.json           # datos del tablero "Ahora mismo"
+  now.json           # aprendiendo / jugando, editable en github.com
   fonts/             # woff2, subset latino
   cv/                # CV en espanol e ingles
   screenshots/       # capturas reales de proyectos, webp
   og-image.png       # imagen para redes, 1200x630
-scripts/
-  update-now.sh      # actualiza now.json desde el servidor
 ```
 
 ## Comandos
@@ -49,38 +47,18 @@ npm run deploy     # publica dist/ en la rama gh-pages
 
 Vite 8 requiere Node 20.19 o superior.
 
-## Tablero "Ahora mismo"
+## Tablero "neofetch"
 
-El hero muestra un panel estilo `neofetch`. Sus datos salen de dos sitios:
+El panel del hero no necesita ningun servidor propio. Sus datos salen de:
 
-- `public/now.json`, que el navegador lee **de la rama main en GitHub**
-  (`raw.githubusercontent.com/.../main/public/now.json`). Por eso basta con
-  hacer push del archivo para que cambie el tablero: no hace falta
-  volver a publicar la web. El archivo local es el respaldo si GitHub no
-  responde.
-- La API publica de GitHub, para "ultimo push": el repo con `pushed_at`
-  mas reciente. Es automatico.
-
-Campos de `now.json`:
-
-| Campo | Quien lo rellena | Como |
-|---|---|---|
-| `server.host`, `server.os` | El script en la Pi | `hostname` y `/etc/os-release` |
-| `server.uptime` | El script en la Pi | `uptime -p` |
-| `server.containers` | El script en la Pi | `docker ps -q \| wc -l` |
-| `learning.es` / `learning.en` | Tu, a mano | Variables al principio del script, o editando el JSON |
-| `playing` | Tu, a mano | Igual. Vacio o `null` muestra "sin datos" |
-| `updated` | El script | Fecha UTC de la ultima ejecucion |
-
-Para que la Pi lo mantenga al dia, clona el repo en ella con una clave de
-despliegue con permiso de escritura y pon `scripts/update-now.sh` en cron:
-
-```
-0 7 * * * /home/pi/portafolio/scripts/update-now.sh
-```
-
-Si no quieres cron todavia, edita `public/now.json` a mano y haz push:
-el tablero cambia en el siguiente refresco.
+- **La API publica de GitHub**, en el navegador del visitante: repos
+  publicos, lenguaje mas usado y ultimo push (el repo con `pushed_at` mas
+  reciente). Automatico, sin token.
+- **`public/now.json`** para lo que solo tu sabes: `learning` (es/en) y
+  `playing`. El navegador lo lee de la rama `main` en GitHub
+  (`raw.githubusercontent.com`), asi que basta con editar el archivo en
+  github.com y guardar: el tablero cambia sin volver a publicar la web.
+  `null` o vacio muestra "sin datos". Actualiza tambien `updated`.
 
 ## Contenido pendiente de Javier
 

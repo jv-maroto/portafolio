@@ -3,17 +3,17 @@
     "main": "Sections",
     "skip": "Skip to content",
     "projects": "Projects",
-    "homelab": "Homelab",
+    "homelab": "Server",
     "experience": "Experience",
     "contact": "Contact",
     "themeDark": "Dark mode",
     "themeLight": "Light mode"
   },
   "homelab": {
-    "title": "What runs at home",
-    "intro": "A Raspberry Pi 5 works as media server, ad blocker, library and test bench. Everything in containers, brought up from a single Docker Compose file.",
+    "title": "The home server",
+    "intro": "I set up a Raspberry Pi 5 as media server, ad blocker, library and test bench, everything in containers brought up from a single Docker Compose file. This is what is inside.",
     "services": {
-      "pi5": "The server. Runs everything else.",
+      "pi5": "The machine. Runs everything else.",
       "docker": "Each service in its own container, one file brings everything up.",
       "jellyfin": "Films and series on any screen in the house.",
       "arr": "Find and organise the content so Jellyfin picks it up sorted.",
@@ -31,15 +31,15 @@
     "ctaProjects": "See projects"
   },
   "now": {
-    "host": "host",
-    "os": "os",
-    "uptime": "uptime",
-    "containers": "containers",
+    "user": "user",
+    "repos": "public repos",
+    "language": "language",
     "lastPush": "last push",
     "learning": "learning",
     "playing": "playing",
-    "updated": "updated",
-    "noData": "no data"
+    "updated": "edited",
+    "noData": "no data",
+    "source": "data from the public GitHub API"
   },
   "about": {
     "title": "About",
