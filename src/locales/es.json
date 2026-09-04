@@ -59,27 +59,27 @@
         "title": "SportEvent",
         "description": "Plataforma de gestión y venta de entradas para eventos deportivos. Proyecto final del ciclo DAW.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "El proyecto final de DAW tenía que ser un producto completo, no una demo: organizadores que crean eventos deportivos y participantes que se inscriben, pagan, compiten y consultan clasificaciones.",
+          "decision": "API en FastAPI con PostgreSQL, frontend en React 19 y cobros reales con Stripe en vez de simular el pago. Todo en Docker para levantarlo igual en mi PC y en el tribunal.",
+          "result": "Defendido en mayo de 2026 como trabajo final del ciclo."
         }
       },
       "fitdash": {
         "title": "FitDash",
         "description": "Panel personal de fitness con un agente de IA local que entiende texto, audio, CSV y fotos.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "Tenía los entrenos en una app, la nutrición en otra y las medidas en una hoja de cálculo. Registrar cualquier cosa costaba más que hacerla.",
+          "decision": "Registrar por Telegram, que ya tengo abierto: texto libre, audio transcrito con Whisper, CSV exportado de la app de gimnasio o una foto. Un agente con Qwen 2.5 vía Ollama interpreta y responde en local, sin coste y sin mandar datos a nadie.",
+          "result": "Un panel con composición corporal (Navy, Jackson-Pollock, FFMI), detección automática de récords, 1RM estimado y niveles por ejercicio. PostgreSQL 16, Redis y Docker Compose por debajo."
         }
       },
       "winsvalinn": {
         "title": "WinSvalinn",
         "description": "Auditoría y endurecimiento de seguridad para Windows. Todo en local, ediciones Free y Empresarial.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "Auditar y endurecer un Windows exige media docena de programas distintos, y la mayoría envía datos fuera o pide cuenta.",
+          "decision": "Una sola aplicación 100% local, sin cuentas ni telemetría: auditoría con puntuación de 0 a 100 y hallazgos mapeados a CIS, remediación de un clic siempre reversible (punto de restauración y copia del registro antes de tocar nada), y optimización de GPU, red, SSD y energía elegible con casillas.",
+          "result": "Instalador para Windows 10 y 11 en Releases. Edición Free open source bajo MIT y edición Empresarial con clave de activación offline, más una edición de terminal para equipos sin interfaz."
         }
       },
       "cinestream": {
@@ -100,14 +100,20 @@
       },
       "jobhunter": {
         "title": "JobHunter",
-        "description": "Buscador de empleo autoalojado: rastrea portales, puntúa cada oferta contra tu CV con el modelo que elijas (Anthropic, OpenAI, Gemini u Ollama en local), prepara CV y carta a medida y rellena formularios con una extensión de Chrome."
+        "description": "Buscador de empleo autoalojado: rastrea portales, puntúa cada oferta contra tu CV con el modelo que elijas (Anthropic, OpenAI, Gemini u Ollama en local), prepara CV y carta a medida y rellena formularios con una extensión de Chrome.",
+        "case": {
+          "problem": "Buscar trabajo a mano es repetir lo mismo en nueve portales: leer ofertas, decidir si encajan, adaptar el CV y rellenar el mismo formulario otra vez.",
+          "decision": "Una sola herramienta en mi máquina, sin cuentas ni nube: rastrea LinkedIn, Indeed, Remotive, Tecnoempleo y otros, puntúa cada oferta contra mi CV con el modelo que yo elija (Anthropic, OpenAI, Gemini u Ollama en local, sin coste), genera CV y carta a medida con Typst y una extensión de Chrome rellena los formularios de Lever, Greenhouse, Workable y compañía.",
+          "result": "En desarrollo y en uso diario. Funciona entera sin ninguna API de pago, y sin IA sigue sirviendo como rastreador y kanban."
+        }
       },
       "fitnessAppPro": {
         "title": "Fitness App Pro",
         "description": "Seguimiento de peso y nutrición con medias móviles, planificador de volumen y cálculo de metabolismo basal y gasto diario."
       }
     },
-    "wip": "en desarrollo"
+    "wip": "en desarrollo",
+    "noShot": "Sin captura todavía: la interfaz cambia cada semana. El código está en GitHub."
   },
   "stack": {
     "title": "Con lo que trabajo",

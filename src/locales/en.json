@@ -59,27 +59,27 @@
         "title": "SportEvent",
         "description": "Management and ticketing platform for sports events. Final project of the DAW degree.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "The final project of the degree had to be a complete product, not a demo: organisers creating sports events and participants signing up, paying, competing and checking rankings.",
+          "decision": "FastAPI API with PostgreSQL, React 19 frontend and real payments with Stripe instead of a mocked checkout. Everything in Docker so it runs the same on my PC and in front of the examiners.",
+          "result": "Defended in May 2026 as the final project of the degree."
         }
       },
       "fitdash": {
         "title": "FitDash",
         "description": "Personal fitness dashboard with a local AI agent that understands text, audio, CSV and photos.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "Workouts in one app, nutrition in another, body measurements in a spreadsheet. Logging anything cost more than doing it.",
+          "decision": "Log through Telegram, which is already open: free text, audio transcribed with Whisper, a CSV exported from the gym app, or a photo. An agent running Qwen 2.5 through Ollama interprets and answers locally, at no cost and without sending data anywhere.",
+          "result": "A dashboard with body composition (Navy, Jackson-Pollock, FFMI), automatic PR detection, estimated 1RM and per-exercise levels. PostgreSQL 16, Redis and Docker Compose underneath."
         }
       },
       "winsvalinn": {
         "title": "WinSvalinn",
         "description": "Security audit and hardening suite for Windows. Fully local, Free and Enterprise editions.",
         "case": {
-          "problem": "",
-          "decision": "",
-          "result": ""
+          "problem": "Auditing and hardening a Windows machine takes half a dozen different programs, and most of them phone home or require an account.",
+          "decision": "One fully local application, no accounts, no telemetry: a 0 to 100 security score with findings mapped to CIS, one-click remediation that is always reversible (restore point and registry backup before touching anything), and GPU, network, SSD and power optimisations selectable with checkboxes.",
+          "result": "Installer for Windows 10 and 11 in Releases. Free edition open source under MIT and an Enterprise edition with an offline activation key, plus a terminal edition for machines without a desktop."
         }
       },
       "cinestream": {
@@ -100,14 +100,20 @@
       },
       "jobhunter": {
         "title": "JobHunter",
-        "description": "Self-hosted job search: scrapes job boards, scores every offer against your CV with the model you choose (Anthropic, OpenAI, Gemini or local Ollama), prepares tailored CVs and cover letters, and fills application forms through a Chrome extension."
+        "description": "Self-hosted job search: scrapes job boards, scores every offer against your CV with the model you choose (Anthropic, OpenAI, Gemini or local Ollama), prepares tailored CVs and cover letters, and fills application forms through a Chrome extension.",
+        "case": {
+          "problem": "Searching for a job by hand means repeating the same work across nine boards: reading offers, judging fit, adapting the CV and filling in the same form again.",
+          "decision": "One tool on my own machine, no accounts, no cloud: it scrapes LinkedIn, Indeed, Remotive, Tecnoempleo and others, scores every offer against my CV with the model I choose (Anthropic, OpenAI, Gemini or local Ollama at no cost), generates tailored CVs and cover letters with Typst, and a Chrome extension fills in Lever, Greenhouse, Workable and similar forms.",
+          "result": "In development and in daily use. Runs fully without any paid API, and without AI it still works as a scraper and kanban."
+        }
       },
       "fitnessAppPro": {
         "title": "Fitness App Pro",
         "description": "Weight and nutrition tracking with moving averages, a bulking planner and basal metabolism and daily expenditure calculations."
       }
     },
-    "wip": "in progress"
+    "wip": "in progress",
+    "noShot": "No screenshot yet: the interface changes every week. The code is on GitHub."
   },
   "stack": {
     "title": "What I work with",

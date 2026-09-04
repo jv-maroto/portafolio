@@ -23,17 +23,23 @@ export default function FeaturedProject({ project }) {
 
   return (
     <article className="grid gap-8 border-t border-rule py-12 first:border-t-0 first:pt-0 md:grid-cols-2 md:gap-12">
-      <Wrap href={project.live || project.github}>
-        <img
-          src={image}
-          alt={t(`${base}.alt`, { defaultValue: title })}
-          width={project.width}
-          height={project.height}
-          loading="lazy"
-          decoding="async"
-          className="block h-auto w-full border border-rule"
-        />
-      </Wrap>
+      {image ? (
+        <Wrap href={project.live || project.github}>
+          <img
+            src={image}
+            alt={t(`${base}.alt`, { defaultValue: title })}
+            width={project.width}
+            height={project.height}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full border border-rule"
+          />
+        </Wrap>
+      ) : (
+        <p className="m-0 max-w-[40ch] self-start border border-rule p-5 font-mono text-sm text-ink-2">
+          {t('projects.noShot')}
+        </p>
+      )}
 
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>

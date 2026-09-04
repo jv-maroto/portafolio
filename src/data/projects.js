@@ -8,6 +8,14 @@ const shot = (name) => `${BASE}screenshots/projects/${name}.webp`
 
 export const projects = [
   {
+    id: 'jobhunter',
+    stack: ['FastAPI', 'React', 'SQLite', 'Ollama', 'Typst', 'Chrome extension'],
+    github: 'https://github.com/jv-maroto/jobhunter-oss',
+    live: null,
+    featured: true,
+    wip: true,
+  },
+  {
     id: 'sportevent',
     image: shot('sportevent'),
     width: 1280,
@@ -36,14 +44,6 @@ export const projects = [
     github: 'https://github.com/jv-maroto/Project-WinSvalinn',
     live: null,
     featured: true,
-  },
-  {
-    id: 'jobhunter',
-    stack: ['FastAPI', 'React', 'SQLite', 'Ollama', 'Typst', 'Chrome extension'],
-    github: 'https://github.com/jv-maroto/jobhunter-oss',
-    live: null,
-    featured: false,
-    wip: true,
   },
   {
     id: 'cinestream',

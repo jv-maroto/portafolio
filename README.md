@@ -68,13 +68,14 @@ El panel del hero no necesita ningun servidor propio. Sus datos salen de:
 
 ## Contenido pendiente de Javier
 
-- Casos de estudio de SportEvent, FitDash y WinSvalinn: los campos
-  `case.problem`, `case.decision` y `case.result` de cada uno en
-  `src/locales/*.json` estan vacios y no se muestran hasta rellenarlos.
+- Los casos de estudio (`case.problem` / `decision` / `result` en
+  `src/locales/*.json`) de JobHunter, SportEvent, FitDash y WinSvalinn
+  estan redactados a partir de los README de cada repo. Conviene leerlos
+  y corregir lo que no sea exacto.
 - Repasar los textos de `hero`, `about`, `homelab` y `contact`.
-- JobHunter no tiene captura: con una en
-  `public/screenshots/projects/jobhunter.webp` y `featured: true` en
-  `src/data/projects.js` pasa a destacado.
+- JobHunter esta destacado sin captura. Cuando haya una, guardarla como
+  `public/screenshots/projects/jobhunter.webp` y anadir `image`, `width`
+  y `height` a su entrada en `src/data/projects.js`.
 - Los repos `sportevent`, `servidor-pi` y `pyaws-practice` son privados o
   no existen: por eso no tienen enlace a codigo. Si se hacen publicos,
   basta con poner la URL en `src/data/projects.js`.
