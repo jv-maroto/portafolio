@@ -1,11 +1,5 @@
 {
   "updated": "2026-09-04T00:00:00Z",
-  "server": {
-    "host": "pi5",
-    "os": "Debian",
-    "uptime": null,
-    "containers": null
-  },
   "learning": {
     "es": "Scroll-driven animations y View Transitions",
     "en": "Scroll-driven animations and View Transitions"
