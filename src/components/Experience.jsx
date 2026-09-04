@@ -3,7 +3,7 @@ import Section from './Section'
 
 const ITEMS = [
   { id: 'sagrera', status: 'current' },
-  { id: 'daw', status: 'current' },
+  { id: 'daw', status: 'completed' },
   { id: 'asir', status: 'completed' },
 ]
 

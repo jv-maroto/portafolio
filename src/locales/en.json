@@ -134,9 +134,9 @@
       },
       "daw": {
         "role": "Web Application Development",
-        "company": "IES Pérez Minik",
+        "company": "IES César Manrique",
         "period": "2024 to 2026",
-        "description": "Higher vocational degree. Final project: SportEvent, built with FastAPI, React 19 and Stripe. Defended in May 2026."
+        "description": "Higher vocational degree, completed in May 2026. Final project: SportEvent, built with FastAPI, React 19 and Stripe."
       },
       "asir": {
         "role": "Systems and Network Administration",
