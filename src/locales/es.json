@@ -3,10 +3,27 @@
     "main": "Secciones",
     "skip": "Saltar al contenido",
     "projects": "Proyectos",
+    "homelab": "Homelab",
     "experience": "Experiencia",
     "contact": "Contacto",
     "themeDark": "Modo oscuro",
     "themeLight": "Modo claro"
+  },
+  "homelab": {
+    "title": "Lo que corre en casa",
+    "intro": "Una Raspberry Pi 5 hace de servidor multimedia, bloqueador de anuncios, biblioteca y banco de pruebas. Todo en contenedores y todo documentado en el repositorio.",
+    "repo": "Ver la configuración completa en GitHub",
+    "services": {
+      "pi5": "El servidor. Corre todo lo demás.",
+      "docker": "Cada servicio en su contenedor, con un único archivo que levanta todo.",
+      "jellyfin": "Películas y series en cualquier pantalla de la casa.",
+      "arr": "Localizan y organizan el contenido para que Jellyfin lo encuentre ordenado.",
+      "pihole": "DNS local que bloquea anuncios y rastreadores para toda la red.",
+      "calibre": "Biblioteca de libros electrónicos.",
+      "gamefinder": "Buscador de juegos escrito a medida.",
+      "agent": "Agente en PowerShell para el equipo Windows.",
+      "ollama": "Modelos de lenguaje en local. Es lo que usan FitDash y CineStream."
+    }
   },
   "hero": {
     "title": "Administro sistemas y construyo las aplicaciones Python que corren en ellos.",
@@ -15,12 +32,13 @@
     "ctaProjects": "Ver proyectos"
   },
   "now": {
-    "title": "Ahora mismo",
-    "server": "servidor",
+    "host": "host",
+    "os": "os",
     "uptime": "uptime",
     "containers": "contenedores",
     "lastPush": "último push",
     "learning": "aprendiendo",
+    "playing": "jugando",
     "updated": "actualizado",
     "noData": "sin datos"
   },

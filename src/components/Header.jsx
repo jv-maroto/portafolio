@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../hooks/useTheme'
 
-const SECTIONS = ['projects', 'experience', 'contact']
+const SECTIONS = ['projects', 'homelab', 'experience', 'contact']
 
 const linkClass = 'text-sm text-ink-2 hover:text-ink no-underline hover:underline'
 const buttonClass =

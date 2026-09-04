@@ -5,7 +5,7 @@ import { stackCategories } from '../data/stack'
 export default function Stack() {
   const { t } = useTranslation()
   return (
-    <Section id="stack" title={t('stack.title')}>
+    <Section id="stack" title={t('stack.title')} band>
       <dl className="m-0 grid gap-x-10 gap-y-6 sm:grid-cols-2">
         {stackCategories.map((cat) => (
           <div key={cat.id}>

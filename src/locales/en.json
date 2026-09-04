@@ -3,10 +3,27 @@
     "main": "Sections",
     "skip": "Skip to content",
     "projects": "Projects",
+    "homelab": "Homelab",
     "experience": "Experience",
     "contact": "Contact",
     "themeDark": "Dark mode",
     "themeLight": "Light mode"
+  },
+  "homelab": {
+    "title": "What runs at home",
+    "intro": "A Raspberry Pi 5 works as media server, ad blocker, library and test bench. Everything in containers, everything documented in the repository.",
+    "repo": "Full configuration on GitHub",
+    "services": {
+      "pi5": "The server. Runs everything else.",
+      "docker": "Each service in its own container, one file brings everything up.",
+      "jellyfin": "Films and series on any screen in the house.",
+      "arr": "Find and organise the content so Jellyfin picks it up sorted.",
+      "pihole": "Local DNS that blocks ads and trackers for the whole network.",
+      "calibre": "E-book library.",
+      "gamefinder": "A game finder written from scratch.",
+      "agent": "PowerShell agent for the Windows machine.",
+      "ollama": "Language models running locally. FitDash and CineStream use it."
+    }
   },
   "hero": {
     "title": "I run systems and build the Python applications that run on them.",
@@ -15,12 +32,13 @@
     "ctaProjects": "See projects"
   },
   "now": {
-    "title": "Right now",
-    "server": "server",
+    "host": "host",
+    "os": "os",
     "uptime": "uptime",
     "containers": "containers",
     "lastPush": "last push",
     "learning": "learning",
+    "playing": "playing",
     "updated": "updated",
     "noData": "no data"
   },

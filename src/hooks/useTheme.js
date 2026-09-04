@@ -1,12 +1,13 @@
 import { useCallback, useSyncExternalStore } from 'react'
 
 const STORAGE_KEY = 'jm-portafolio-theme'
-const THEME_COLOR = { light: '#ffffff', dark: '#141414' }
+const THEME_COLOR = { dark: '#1a1e23', light: '#f1f2f0' }
 
+// Oscuro por defecto; la clase .light activa la alternativa.
 const getInitial = () => {
-  if (typeof window === 'undefined') return 'light'
+  if (typeof window === 'undefined') return 'dark'
   const stored = window.localStorage.getItem(STORAGE_KEY)
-  return stored === 'dark' || stored === 'light' ? stored : 'light'
+  return stored === 'dark' || stored === 'light' ? stored : 'dark'
 }
 
 let theme = getInitial()
@@ -14,7 +15,7 @@ const listeners = new Set()
 
 const applyTheme = (next) => {
   if (typeof document === 'undefined') return
-  document.documentElement.classList.toggle('dark', next === 'dark')
+  document.documentElement.classList.toggle('light', next === 'light')
   const meta = document.querySelector('meta[name="theme-color"]')
   if (meta) meta.setAttribute('content', THEME_COLOR[next])
 }
@@ -47,7 +48,7 @@ const subscribe = (listener) => {
   return () => listeners.delete(listener)
 }
 const getSnapshot = () => theme
-const getServerSnapshot = () => 'light'
+const getServerSnapshot = () => 'dark'
 
 export function useTheme() {
   const current = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
