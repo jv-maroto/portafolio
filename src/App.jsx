@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,10 +9,14 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  const { t } = useTranslation()
   return (
-    <div className="relative min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <div className="min-h-screen bg-paper text-ink">
+      <a href="#main" className="skip">
+        {t('nav.skip')}
+      </a>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <Projects />

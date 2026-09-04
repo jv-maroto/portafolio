@@ -1,5 +1,5 @@
-// Project metadata. Textual fields (title/description) live in i18n,
-// these are stack lists and links, the same in both languages.
+// Metadatos de proyecto. Titulo, descripcion y caso de estudio viven en i18n.
+// width/height evitan el salto de layout al cargar la captura.
 
 const BASE = import.meta.env.BASE_URL
 
@@ -7,8 +7,9 @@ export const projects = [
   {
     id: 'sportevent',
     image: `${BASE}screenshots/sportevent.svg`,
+    width: 1600,
+    height: 900,
     stack: ['FastAPI', 'React 19', 'PostgreSQL', 'Stripe', 'Docker'],
-    accent: 'from-emerald-500/30 to-cyan-500/30',
     github: 'https://github.com/jv-maroto/sportevent',
     live: null,
     featured: true,
@@ -16,8 +17,9 @@ export const projects = [
   {
     id: 'fitdash',
     image: `${BASE}screenshots/fitdash.svg`,
+    width: 1600,
+    height: 900,
     stack: ['FastAPI', 'Telegram', 'Ollama', 'Qwen 2.5', 'Whisper', 'Redis', 'Recharts'],
-    accent: 'from-fuchsia-500/30 to-rose-500/30',
     github: 'https://github.com/jv-maroto/fitdash',
     live: null,
     featured: true,
@@ -26,46 +28,39 @@ export const projects = [
     id: 'winsvalinn',
     image: `${BASE}screenshots/winsvalinn/dashboard.png`,
     imageDark: `${BASE}screenshots/winsvalinn/gamer-dashboard.png`,
-    stack: ['Python', 'Win internals', 'CIS hardening', 'Liquid-glass UI'],
-    accent: 'from-blue-500/30 to-indigo-500/30',
+    width: 1600,
+    height: 900,
+    stack: ['Python', 'Windows internals', 'CIS hardening'],
     github: 'https://github.com/jv-maroto/WinSvalinn',
     live: null,
     featured: true,
   },
   {
     id: 'cinestream',
-    image: `${BASE}screenshots/cinestream.svg`,
     stack: ['FastAPI', 'Celery', 'pgvector', 'YOLO', 'OpenCV', 'React TS'],
-    accent: 'from-amber-500/30 to-orange-500/30',
     github: 'https://github.com/jv-maroto/cinestream',
     live: null,
-    featured: true,
+    featured: false,
   },
   {
     id: 'portalEmployes',
-    image: `${BASE}screenshots/portal-employes.svg`,
     stack: ['Django', 'React', 'Tailwind', 'Render'],
-    accent: 'from-sky-500/30 to-blue-500/30',
     github: 'https://github.com/jv-maroto/Portal-Employes',
     live: 'https://portal-employes.onrender.com',
-    featured: true,
+    featured: false,
   },
   {
     id: 'servidorPi',
-    image: `${BASE}screenshots/servidor-pi.svg`,
     stack: ['Docker', 'Jellyfin', '*arr', 'Pi-hole', 'Calibre', 'PowerShell'],
-    accent: 'from-red-500/30 to-pink-500/30',
     github: 'https://github.com/jv-maroto/servidor-pi',
     live: null,
-    featured: true,
+    featured: false,
   },
   {
     id: 'pyawsPractice',
-    image: `${BASE}screenshots/pyaws-practice.svg`,
     stack: ['React 19', 'TypeScript', 'Vite', 'Vercel'],
-    accent: 'from-violet-500/30 to-purple-500/30',
     github: 'https://github.com/jv-maroto/pyaws-practice',
     live: 'https://pyaws-practice.vercel.app',
-    featured: true,
+    featured: false,
   },
 ]
