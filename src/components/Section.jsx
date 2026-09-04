@@ -1,8 +1,8 @@
 // Todas las secciones comparten el mismo borde izquierdo (contenedor de 1040).
 // El texto se limita a 760 dentro, alineado a la izquierda, no centrado.
-export default function Section({ id, title, children, wide = false }) {
+export default function Section({ id, title, children, wide = false, band = false }) {
   return (
-    <section id={id} className="py-14 sm:py-20">
+    <section id={id} className={band ? 'bg-paper-2 py-14 sm:py-20' : 'py-14 sm:py-20'}>
       <div className="mx-auto max-w-[1040px] px-6">
         <div className={wide ? '' : 'max-w-[760px]'}>
           <h2 className="mb-8 text-title font-medium">{title}</h2>
