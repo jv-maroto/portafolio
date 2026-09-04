@@ -1,6 +1,7 @@
 // Metadatos de proyecto. Titulo, descripcion y caso de estudio viven en i18n.
 // Capturas reales en public/screenshots/projects. width/height son las
 // dimensiones exactas del archivo para evitar el salto de layout al cargar.
+// github: null cuando el repositorio no es publico; live: null sin demo.
 
 const BASE = import.meta.env.BASE_URL
 const shot = (name) => `${BASE}screenshots/projects/${name}.webp`
@@ -12,7 +13,7 @@ export const projects = [
     width: 1280,
     height: 800,
     stack: ['FastAPI', 'React 19', 'PostgreSQL', 'Stripe', 'Docker'],
-    github: 'https://github.com/jv-maroto/sportevent',
+    github: null,
     live: null,
     featured: true,
   },
@@ -32,9 +33,17 @@ export const projects = [
     width: 1360,
     height: 900,
     stack: ['Python', 'Windows internals', 'CIS hardening'],
-    github: 'https://github.com/jv-maroto/WinSvalinn',
+    github: 'https://github.com/jv-maroto/Project-WinSvalinn',
     live: null,
     featured: true,
+  },
+  {
+    id: 'jobhunter',
+    stack: ['FastAPI', 'React', 'SQLite', 'Ollama', 'Typst', 'Chrome extension'],
+    github: 'https://github.com/jv-maroto/jobhunter-oss',
+    live: null,
+    featured: false,
+    wip: true,
   },
   {
     id: 'cinestream',
@@ -51,9 +60,19 @@ export const projects = [
     image: shot('portal-employes'),
     width: 1829,
     height: 936,
-    stack: ['Django', 'React', 'Tailwind', 'Render'],
+    stack: ['Django', 'React', 'Tailwind'],
     github: 'https://github.com/jv-maroto/Portal-Employes',
-    live: 'https://portal-employes.onrender.com',
+    live: null,
+    featured: false,
+  },
+  {
+    id: 'fitnessAppPro',
+    image: shot('fitness-app-pro'),
+    width: 1552,
+    height: 737,
+    stack: ['TypeScript', 'Open Food Facts'],
+    github: 'https://github.com/jv-maroto/fitness-app-pro',
+    live: null,
     featured: false,
   },
   {
@@ -62,7 +81,7 @@ export const projects = [
     width: 1280,
     height: 720,
     stack: ['Docker', 'Jellyfin', '*arr', 'Pi-hole', 'Calibre', 'PowerShell'],
-    github: 'https://github.com/jv-maroto/servidor-pi',
+    github: null,
     live: null,
     featured: false,
   },
@@ -72,7 +91,7 @@ export const projects = [
     width: 1280,
     height: 720,
     stack: ['React 19', 'TypeScript', 'Vite', 'Vercel'],
-    github: 'https://github.com/jv-maroto/pyaws-practice',
+    github: null,
     live: 'https://pyaws-practice.vercel.app',
     featured: false,
   },

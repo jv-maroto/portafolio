@@ -20,11 +20,6 @@ export default function Homelab() {
         ))}
       </dl>
 
-      <p className="mt-10 mb-0 text-sm text-ink-3">
-        <a href="https://github.com/jv-maroto/servidor-pi" target="_blank" rel="noopener noreferrer">
-          {t('homelab.repo')}
-        </a>
-      </p>
     </Section>
   )
 }
