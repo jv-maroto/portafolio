@@ -29,8 +29,8 @@ src/
 public/
   now.json           # datos del tablero "Ahora mismo"
   fonts/             # woff2, subset latino
-  cv/                # PDF del CV
-  screenshots/       # capturas de proyectos
+  cv/                # CV en espanol e ingles
+  screenshots/       # capturas reales de proyectos, webp
   og-image.png       # imagen para redes, 1200x630
 scripts/
   update-now.sh      # actualiza now.json desde el servidor
@@ -65,13 +65,13 @@ escribe el archivo y hace commit. Un cron diario basta:
 
 ## Contenido pendiente de Javier
 
-- Capturas reales en `public/screenshots/` (hoy hay SVG de relleno
-  para todos menos WinSvalinn).
 - Casos de estudio de SportEvent, FitDash y WinSvalinn: los campos
   `case.problem`, `case.decision` y `case.result` de cada uno en
   `src/locales/*.json` estan vacios y no se muestran hasta rellenarlos.
-- CV definitivo en `public/cv/javier-maroto-cv.pdf`.
 - Repasar los textos de `hero`, `about` y `contact` para que suenen a el.
+
+Las capturas (`public/screenshots/projects/*.webp`) y los dos CV
+(`public/cv/`, uno por idioma) vienen de la version publicada anterior.
 
 ## Datos y contenido
 

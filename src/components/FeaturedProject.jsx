@@ -1,14 +1,12 @@
 import { useTranslation } from 'react-i18next'
-import { useTheme } from '../hooks/useTheme'
 
 const CASE_KEYS = ['problem', 'decision', 'result']
 
 export default function FeaturedProject({ project }) {
   const { t } = useTranslation()
-  const { isDark } = useTheme()
   const base = `projects.list.${project.id}`
   const title = t(`${base}.title`)
-  const image = isDark && project.imageDark ? project.imageDark : project.image
+  const image = project.image
   const caseStudy = CASE_KEYS.map((k) => [k, t(`${base}.case.${k}`, { defaultValue: '' })]).filter(
     ([, text]) => text
   )
