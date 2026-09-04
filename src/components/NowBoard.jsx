@@ -56,19 +56,19 @@ export default function NowBoard() {
   ]
 
   return (
-    <aside aria-labelledby="now-title" className="board-enter border border-rule bg-paper-2 p-5 font-mono text-sm">
-      <h2 id="now-title" className="mb-4 text-sm font-medium text-ink">
+    <aside aria-labelledby="now-title" className="board-enter bg-ink p-6 font-mono text-sm text-paper">
+      <h2 id="now-title" className="mb-5 text-sm font-medium">
         {t('now.title')}
       </h2>
       <dl className="grid grid-cols-[max-content_1fr] gap-x-5 gap-y-2">
         {rows.map(([label, value]) => (
           <div key={label} className="contents">
-            <dt className="text-ink-3">{label}</dt>
-            <dd className="m-0 break-words text-ink">{value}</dd>
+            <dt className="opacity-60">{label}</dt>
+            <dd className="m-0 break-words">{value}</dd>
           </div>
         ))}
       </dl>
-      <p className="mt-4 mb-0 text-xs text-ink-3">
+      <p className="mt-5 mb-0 text-xs opacity-60">
         {t('now.updated')}{' '}
         {now?.updated ? relative(now.updated, lang) : none}
       </p>
