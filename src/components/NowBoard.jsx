@@ -73,7 +73,6 @@ export default function NowBoard() {
     [t('now.language'), gh?.language ?? none],
     [t('now.lastPush'), gh?.push ? `${gh.push.repo}, ${relative(gh.push.at, lang)}` : none],
     [t('now.learning'), pick('learning')],
-    [t('now.playing'), pick('playing')],
   ]
 
   return (
