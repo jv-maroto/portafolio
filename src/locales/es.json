@@ -1,60 +1,58 @@
 {
-  "meta": {
-    "language": "Español",
-    "languageShort": "ES"
-  },
   "nav": {
-    "about": "Sobre mí",
+    "main": "Secciones",
+    "skip": "Saltar al contenido",
     "projects": "Proyectos",
-    "stack": "Stack",
     "experience": "Experiencia",
     "contact": "Contacto",
-    "toggleTheme": "Cambiar tema",
-    "toggleLang": "Cambiar idioma",
-    "menu": "Menú"
+    "themeDark": "Modo oscuro",
+    "themeLight": "Modo claro"
   },
   "hero": {
-    "greeting": "Hola, soy",
-    "name": "Javier Maroto",
-    "role": "Full-Stack Python + AI Engineer",
-    "description": "Construyo apps en producción desde la infraestructura hasta la UI. Python, FastAPI, React, LLMs locales y Docker. Actualmente desarrollando SportEvent, FitDash y WinSvalinn.",
-    "ctaProjects": "Ver proyectos",
-    "ctaCV": "Descargar CV",
-    "ctaContact": "Contactar",
-    "socialGithub": "GitHub",
-    "socialLinkedin": "LinkedIn",
-    "socialEmail": "Email",
-    "scrollHint": "Desplázate"
+    "title": "Administro sistemas y construyo las aplicaciones Python que corren en ellos.",
+    "description": "API con FastAPI, interfaz en React, PostgreSQL, Docker y modelos de lenguaje en local. De la infraestructura a la pantalla, sin intermediarios.",
+    "availability": "Santa Cruz de Tenerife. Disponible para trabajo remoto y presencial en España y Europa.",
+    "ctaProjects": "Ver proyectos"
+  },
+  "now": {
+    "title": "Ahora mismo",
+    "server": "servidor",
+    "uptime": "uptime",
+    "containers": "contenedores",
+    "lastPush": "último push",
+    "learning": "aprendiendo",
+    "updated": "actualizado",
+    "noData": "sin datos"
   },
   "about": {
     "title": "Sobre mí",
-    "kicker": "Quién soy",
-    "paragraph": "Ingeniero Full-Stack centrado en Python y aplicaciones de IA. Diseño, programo y despliego productos completos: APIs con FastAPI, frontends en React 19 con TypeScript, bases de datos PostgreSQL con pgvector, infraestructura en Docker y modelos de lenguaje locales con Ollama. Vengo del mundo sysadmin, así que pienso en escalado, seguridad y observabilidad desde el día uno.",
-    "availability": "Disponible para roles remotos en cualquier parte del mundo y oportunidades presenciales en Europa y España.",
-    "stats": {
-      "projects": { "value": "7", "label": "Proyectos en producción" },
-      "stacks": { "value": "5+", "label": "Stacks shipped" },
-      "sysadmin": { "value": "2+", "label": "Años como sysadmin" },
-      "ai": { "value": "Local", "label": "Apps con LLMs locales" }
-    }
+    "paragraph": "Trabajo como administrador de sistemas y programo aplicaciones completas en Python: la API, el frontend en React, la base de datos y el servidor donde se despliegan. Venir de sistemas hace que piense en cómo se va a operar cada cosa antes de escribirla."
   },
   "projects": {
-    "title": "Proyectos destacados",
-    "kicker": "Trabajo seleccionado",
+    "title": "Proyectos",
+    "moreTitle": "Otros proyectos",
     "viewCode": "Código",
-    "liveDemo": "Demo en vivo",
+    "liveDemo": "Demo",
+    "case": {
+      "problem": "Problema",
+      "decision": "Decisión",
+      "result": "Resultado"
+    },
     "list": {
       "sportevent": {
         "title": "SportEvent",
-        "description": "Plataforma de gestión y ticketing de eventos deportivos. Proyecto final del ciclo DAW."
+        "description": "Plataforma de gestión y venta de entradas para eventos deportivos. Proyecto final del ciclo DAW.",
+        "case": { "problem": "", "decision": "", "result": "" }
       },
       "fitdash": {
         "title": "FitDash",
-        "description": "Dashboard personal de fitness con agente IA local multimodal (texto, audio, CSV y fotos)."
+        "description": "Panel personal de fitness con un agente de IA local que entiende texto, audio, CSV y fotos.",
+        "case": { "problem": "", "decision": "", "result": "" }
       },
       "winsvalinn": {
         "title": "WinSvalinn",
-        "description": "Suite de auditoría y optimización de seguridad para Windows. 100% local. Ediciones Free y Empresarial."
+        "description": "Auditoría y endurecimiento de seguridad para Windows. Todo en local, ediciones Free y Empresarial.",
+        "case": { "problem": "", "decision": "", "result": "" }
       },
       "cinestream": {
         "title": "CineStream",
@@ -62,52 +60,49 @@
       },
       "portalEmployes": {
         "title": "Portal-Employes",
-        "description": "Portal de empleados con nóminas, gestión de ausencias y anuncios internos."
+        "description": "Portal de empleados con nóminas, ausencias y anuncios internos."
       },
       "servidorPi": {
         "title": "servidor-pi",
-        "description": "Home server en Raspberry Pi 5 con stack media completo, buscador de juegos custom y agente Windows."
+        "description": "Servidor doméstico en Raspberry Pi 5 con stack multimedia, buscador de juegos y agente para Windows."
       },
       "pyawsPractice": {
         "title": "PyAWS Practice",
-        "description": "Herramienta personal de preparación para entrevistas de AWS Systems Engineer."
+        "description": "Herramienta de preparación para entrevistas de AWS Systems Engineer."
       }
     }
   },
   "stack": {
-    "title": "Stack técnico",
-    "kicker": "Con lo que construyo",
+    "title": "Con lo que trabajo",
     "categories": {
       "languages": "Lenguajes",
       "backend": "Backend",
       "frontend": "Frontend",
       "databases": "Bases de datos",
-      "ai": "IA / ML",
+      "ai": "IA",
       "devops": "DevOps",
-      "sysadmin": "Sysadmin",
+      "sysadmin": "Sistemas",
       "integrations": "Integraciones"
     }
   },
   "experience": {
     "title": "Experiencia y formación",
-    "kicker": "Trayectoria",
-    "current": "Actualmente",
-    "completed": "Completado",
+    "current": "actual",
     "items": {
       "sagrera": {
-        "role": "Administrador de Sistemas",
+        "role": "Administrador de sistemas",
         "company": "Sagrera Canarias",
-        "period": "Actual",
-        "description": "Administración de infraestructura, soporte de usuarios, redes y servidores Windows. L-V 8-15h."
+        "period": "Desde 2023",
+        "description": "Infraestructura, soporte a usuarios, redes y servidores Windows. De lunes a viernes, de 8 a 15."
       },
       "daw": {
-        "role": "Desarrollo de Aplicaciones Web (DAW)",
+        "role": "Desarrollo de Aplicaciones Web",
         "company": "IES Pérez Minik",
-        "period": "Defensa: mayo 2026",
-        "description": "Ciclo formativo de grado superior. TFG: SportEvent (FastAPI + React 19 + Stripe)."
+        "period": "2024 a 2026",
+        "description": "Ciclo formativo de grado superior. Proyecto final: SportEvent, con FastAPI, React 19 y Stripe. Defensa en mayo de 2026."
       },
       "asir": {
-        "role": "Administración de Sistemas en Red (ASIR)",
+        "role": "Administración de Sistemas en Red",
         "company": "IES Pérez Minik",
         "period": "Completado",
         "description": "Ciclo formativo de grado superior en sistemas, redes y virtualización."
@@ -115,20 +110,12 @@
     }
   },
   "contact": {
-    "title": "Hablemos",
-    "kicker": "Contacto",
-    "intro": "Actualmente disponible para roles remotos en cualquier parte del mundo y oportunidades presenciales en Europa y España.",
-    "location": "Basado en Santa Cruz de Tenerife, Islas Canarias, España",
-    "email": "Email",
-    "phone": "Teléfono",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "downloadCV": "Descargar CV (PDF)",
-    "sendEmail": "Enviar email"
+    "title": "Contacto",
+    "intro": "Si tienes un puesto de backend, DevOps o full-stack Python, escríbeme. Contesto en el día.",
+    "location": "Santa Cruz de Tenerife, Islas Canarias.",
+    "downloadCV": "Descargar CV"
   },
   "footer": {
-    "rights": "Todos los derechos reservados.",
-    "built": "Construido con Vite, React 19 y Tailwind v4.",
     "scrollTop": "Volver arriba"
   }
 }

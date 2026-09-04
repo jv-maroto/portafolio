@@ -1,94 +1,81 @@
-# Portafolio v2 - Javier Maroto
+# Portafolio - Javier Maroto
 
-Portfolio personal de **Javier José Maroto Domínguez**, Full-Stack Python + AI Engineer.
+Portfolio personal de Javier Jose Maroto Dominguez.
 
 Live: <https://jv-maroto.github.io/portafolio/>
 
 ## Stack
 
 - Vite 8 + React 19
-- Tailwind CSS v4 (vía `@tailwindcss/vite`, sin `tailwind.config.js`)
-- i18next + react-i18next (idiomas ES y EN)
-- Framer Motion para animaciones de entrada
-- lucide-react para iconos (iconos de marca GitHub / LinkedIn van inline en `src/components/icons/`)
-- Dark mode por defecto con toggle a light (clase `.dark` en `<html>`, persistida en `localStorage`)
+- Tailwind CSS v4 (via `@tailwindcss/vite`, tokens en `src/index.css`)
+- i18next + react-i18next (ES y EN)
+- Sin librerias de animacion: el unico movimiento es CSS nativo y la
+  View Transitions API para el cambio de tema
+- Fuentes IBM Plex Sans y Mono auto-hospedadas en `public/fonts`
+- Modo claro por defecto con toggle a oscuro, persistido en `localStorage`
 
 ## Estructura
 
 ```
 src/
-  components/        # Header, Hero, About, Projects, Stack, Experience, Contact, Footer
+  components/        # Header, Hero, NowBoard, About, Projects,
+                     # FeaturedProject, ProjectRow, Stack, Experience,
+                     # Contact, Footer
     icons/           # SVG inline de marcas
-  data/              # projects.js, stack.js, socials.js (datos no-i18n)
+  data/              # projects.js, stack.js, socials.js
   hooks/             # useTheme.js
-  locales/           # es.json, en.json (todo el contenido textual)
-  i18n.js            # config react-i18next
-  App.jsx
-  main.jsx
-  index.css          # @import "tailwindcss" + tokens + utilidades hero-gradient / grid-bg
+  locales/           # es.json, en.json (todo el texto visible)
+  index.css          # tokens @theme, @font-face, estilos base
 public/
-  cv/                # PDF del CV (placeholder, reemplazar por el final)
-  screenshots/       # SVG placeholders + PNGs reales de WinSvalinn
-  favicon.svg
+  now.json           # datos del tablero "Ahora mismo"
+  fonts/             # woff2, subset latino
+  cv/                # PDF del CV
+  screenshots/       # capturas de proyectos
+  og-image.png       # imagen para redes, 1200x630
+scripts/
+  update-now.sh      # actualiza now.json desde el servidor
 ```
 
 ## Comandos
 
 ```bash
-# Instalar dependencias
 npm install
-
-# Servidor de desarrollo (http://localhost:5173/portafolio/)
-npm run dev
-
-# Build de producción (carpeta dist/)
+npm run dev        # http://localhost:5173/portafolio/
 npm run build
-
-# Previsualizar el build
 npm run preview
-
-# Lint
 npm run lint
-
-# Desplegar a GitHub Pages (rama gh-pages)
-npm run deploy
+npm run deploy     # publica dist/ en la rama gh-pages
 ```
 
-## Despliegue en GitHub Pages
+Vite 8 requiere Node 20.19 o superior.
 
-`vite.config.js` define `base: '/portafolio/'`, así que el sitio se sirve en
-`https://<usuario>.github.io/portafolio/`. Para publicar:
+## Tablero "Ahora mismo"
 
-```bash
-npm run deploy
+El hero muestra `public/now.json`: servidor, uptime, contenedores y que
+se esta aprendiendo. El ultimo push se lee de la API publica de GitHub en
+el navegador. Los campos a `null` se muestran como "sin datos": no se
+inventa nada.
+
+Para mantenerlo al dia desde la Raspberry Pi, `scripts/update-now.sh`
+escribe el archivo y hace commit. Un cron diario basta:
+
+```
+0 7 * * * /ruta/al/repo/scripts/update-now.sh
 ```
 
-`gh-pages -d dist` hace el push del contenido de `dist/` a la rama `gh-pages`
-del repositorio configurado como `origin`. Asegúrate de que el repo tenga
-GitHub Pages activado apuntando a `gh-pages` / root.
+## Contenido pendiente de Javier
+
+- Capturas reales en `public/screenshots/` (hoy hay SVG de relleno
+  para todos menos WinSvalinn).
+- Casos de estudio de SportEvent, FitDash y WinSvalinn: los campos
+  `case.problem`, `case.decision` y `case.result` de cada uno en
+  `src/locales/*.json` estan vacios y no se muestran hasta rellenarlos.
+- CV definitivo en `public/cv/javier-maroto-cv.pdf`.
+- Repasar los textos de `hero`, `about` y `contact` para que suenen a el.
 
 ## Datos y contenido
 
-- Todo el texto visible vive en `src/locales/es.json` y `src/locales/en.json`.
-- Stack técnico: `src/data/stack.js`.
-- Proyectos (URLs, stack, accent gradient): `src/data/projects.js`.
-- Email, GitHub, LinkedIn y teléfono: `src/data/socials.js`.
-
-## Sustituir el CV
-
-El CV PDF en `public/cv/javier-maroto-cv.pdf` es un placeholder mínimo.
-Sustitúyelo por el PDF definitivo conservando el mismo nombre y el botón
-"Download CV" del Hero y la sección Contact lo descargará automáticamente.
-
-## Imágenes de proyectos
-
-- WinSvalinn usa screenshots reales en `public/screenshots/winsvalinn/`.
-- El resto usan SVG generados con gradiente + nombre + stack en
-  `public/screenshots/<id>.svg`. Cuando haya screenshots reales, sustituye
-  el archivo o actualiza la ruta `image` en `src/data/projects.js`.
-
-## SEO
-
-`index.html` incluye meta tags Open Graph y Twitter Card, con la URL
-`https://jv-maroto.github.io/portafolio/og-image.png` para la imagen
-social (pendiente de generar y subir).
+- Texto: `src/locales/es.json` y `src/locales/en.json`.
+- Proyectos (URLs, stack, dimensiones de captura): `src/data/projects.js`.
+- Stack: `src/data/stack.js`.
+- Email, GitHub y LinkedIn: `src/data/socials.js`. El telefono no se publica.

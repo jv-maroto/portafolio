@@ -1,58 +1,56 @@
 import { useCallback, useSyncExternalStore } from 'react'
 
 const STORAGE_KEY = 'jm-portafolio-theme'
+const THEME_COLOR = { light: '#ffffff', dark: '#141414' }
 
 const getInitial = () => {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
   const stored = window.localStorage.getItem(STORAGE_KEY)
-  if (stored === 'dark' || stored === 'light') return stored
-  return 'dark'
+  return stored === 'dark' || stored === 'light' ? stored : 'light'
 }
 
-// Module-level shared state so every consumer (Header, ProjectCard, etc.)
-// sees the same theme without prop-drilling or context.
 let theme = getInitial()
 const listeners = new Set()
 
 const applyTheme = (next) => {
   if (typeof document === 'undefined') return
-  const root = document.documentElement
-  if (next === 'dark') {
-    root.classList.add('dark')
-    root.classList.remove('light')
-  } else {
-    root.classList.remove('dark')
-    root.classList.add('light')
-  }
+  document.documentElement.classList.toggle('dark', next === 'dark')
+  const meta = document.querySelector('meta[name="theme-color"]')
+  if (meta) meta.setAttribute('content', THEME_COLOR[next])
 }
+
+const reducedMotion = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 const setTheme = (next) => {
   if (theme === next) return
   theme = next
-  if (typeof window !== 'undefined') {
-    window.localStorage.setItem(STORAGE_KEY, next)
+  if (typeof window !== 'undefined') window.localStorage.setItem(STORAGE_KEY, next)
+
+  const swap = () => {
+    applyTheme(next)
+    listeners.forEach((l) => l())
   }
-  applyTheme(next)
-  listeners.forEach((l) => l())
+  // Fundido nativo entre temas cuando el navegador lo soporta.
+  if (document.startViewTransition && !reducedMotion()) {
+    document.startViewTransition(swap)
+  } else {
+    swap()
+  }
 }
 
-// Apply once at module load so SSR-safe and pre-paint.
 applyTheme(theme)
 
 const subscribe = (listener) => {
   listeners.add(listener)
   return () => listeners.delete(listener)
 }
-
 const getSnapshot = () => theme
-const getServerSnapshot = () => 'dark'
+const getServerSnapshot = () => 'light'
 
 export function useTheme() {
   const current = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
-
-  const toggle = useCallback(() => {
-    setTheme(current === 'dark' ? 'light' : 'dark')
-  }, [current])
-
+  const toggle = useCallback(() => setTheme(current === 'dark' ? 'light' : 'dark'), [current])
   return { theme: current, toggle, isDark: current === 'dark' }
 }
