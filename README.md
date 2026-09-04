@@ -27,7 +27,7 @@ src/
   locales/           # es.json, en.json (todo el texto visible)
   index.css          # tokens @theme, @font-face, estilos base
 public/
-  now.json           # aprendiendo / jugando, editable en github.com
+  now.json           # aprendiendo, editable en github.com
   fonts/             # woff2, subset latino
   cv/                # CV en espanol e ingles
   screenshots/       # capturas reales de proyectos, webp
@@ -54,8 +54,7 @@ El panel del hero no necesita ningun servidor propio. Sus datos salen de:
 - **La API publica de GitHub**, en el navegador del visitante: repos
   publicos, lenguaje mas usado y ultimo push (el repo con `pushed_at` mas
   reciente). Automatico, sin token.
-- **`public/now.json`** para lo que solo tu sabes: `learning` (es/en) y
-  `playing`. El navegador lo lee de la rama `main` en GitHub
+- **`public/now.json`** para lo que solo tu sabes: `learning` (es/en). El navegador lo lee de la rama `main` en GitHub
   (`raw.githubusercontent.com`), asi que basta con editar el archivo en
   github.com y guardar: el tablero cambia sin volver a publicar la web.
   `null` o vacio muestra "sin datos". Actualiza tambien `updated`.
