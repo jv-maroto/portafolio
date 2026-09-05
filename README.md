@@ -1,91 +1,92 @@
-# Portafolio - Javier Maroto
+# Javier Maroto · Portfolio
 
-**https://jv-maroto.github.io/portafolio/**
+Portfolio personal de **Javier Maroto / jv-maroto**, desarrollador full-stack Python y administrador de sistemas en Tenerife.
 
-Portfolio personal de Javier Jose Maroto Dominguez: administrador de sistemas
-y desarrollador full-stack Python en Tenerife.
+## Diseño y navegación
+
+Paisaje original de primavera con colinas verdes y nubes de estética anime. El panel central muestra cinco capítulos: Sobre mí, Proyectos, Servidor, Trayectoria y Contacto.
+
+- Entrada secuencial de presentación, título, descripción, acciones y tarjeta de perfil.
+- Navegación libre por capítulos y enlace al siguiente, con URLs por fragmento y soporte para atrás/adelante.
+- Cielo con desplazamiento suave, botón para pausar animaciones y respeto a `prefers-reduced-motion`.
+- Diseño adaptable sin scroll interno de tarjeta: el contenido largo utiliza el scroll normal de la página.
+- Tema claro de primavera por defecto; modo oscuro y preferencia de idioma ES/EN conservados.
+- Se mantienen los nueve proyectos, casos de estudio desplegables, CV en ambos idiomas, enlaces de contacto, stack y tablero GitHub.
 
 ## Stack
 
-- Vite 8 + React 19
-- Tailwind CSS v4 (via `@tailwindcss/vite`, tokens en `src/index.css`)
-- i18next + react-i18next (ES y EN)
-- Sin librerias de animacion: el unico movimiento es CSS nativo y la
-  View Transitions API para el cambio de tema
-- Fuentes IBM Plex Sans y Mono auto-hospedadas en `public/fonts`
-- Modo claro por defecto con toggle a oscuro, persistido en `localStorage`
+React 19, Vite 8, Tailwind CSS 4 e i18next. Sin nuevas dependencias de ejecución ni librerías de animación.
+IBM Plex Sans y Mono autoalojadas, con Georgia para los titulares. La ilustración se sirve localmente.
 
-## Estructura
+## Desarrollo y comprobaciones
 
-```
-src/
-  components/        # Header, Hero, NowBoard, About, Projects,
-                     # FeaturedProject, ProjectRow, Stack, Experience,
-                     # Contact, Footer
-    icons/           # SVG inline de marcas
-  data/              # projects.js, stack.js, socials.js
-  hooks/             # useTheme.js
-  locales/           # es.json, en.json (todo el texto visible)
-  index.css          # tokens @theme, @font-face, estilos base
-public/
-  now.json           # aprendiendo, editable en github.com
-  fonts/             # woff2, subset latino
-  cv/                # CV en espanol e ingles
-  screenshots/       # capturas reales de proyectos, webp
-  og-image.png       # imagen para redes, 1200x630
-```
+Requiere Node 22.12+ (o Node 20.19+), npm y el lockfile incluido.
 
-## Comandos
-
-```bash
-npm install
-npm run dev        # http://localhost:5173/portafolio/
-npm run build
-npm run preview
+```sh
+npm ci
+npm run dev
 npm run lint
+npm run build
+npm run check
 ```
 
-Vite 8 requiere Node 20.19 o superior.
+Vista local: http://127.0.0.1:5173/portafolio/
 
-## Publicacion
+`npm run check` renderiza los cinco capítulos en ES/EN y comprueba identidad, capítulo activo, presencia de proyectos, CV y recursos locales del build. Requiere ejecutar `npm run build` primero. No sustituye una revisión visual en navegador.
 
-Automatica: cada push a `main` ejecuta `.github/workflows/deploy.yml`, que
-construye con Node 22 y sube `dist/` a la rama `gh-pages`, la que sirve
-GitHub Pages. No hay que hacer nada mas. `npm run deploy` sigue existiendo
-como via manual de emergencia.
+## Archivos principales
 
-## Tablero "neofetch"
+- `src/App.jsx`: navegación por fragmentos, panel central, progreso, foco y pausa de movimiento.
+- `src/components/Hero.jsx`: presentación y tarjeta de perfil con entradas escalonadas.
+- `src/components/Header.jsx`: marca personal, idioma, tema y contacto.
+- `src/components/FeaturedProject.jsx`: proyectos con capturas reales y casos desplegables.
+- `src/components/Section.jsx`: títulos y presentación común de capítulos.
+- `src/index.css`: paisaje, cielo, colores, tipografía, animaciones y breakpoints.
+- `src/data/profile.js`: identidad pública del propietario.
+- `src/data/projects.js`, `stack.js`, `socials.js`: proyectos, habilidades y contacto.
+- `src/locales/es.json`, `en.json`: textos visibles; el nuevo diseño está en `spring`.
+- `public/images/spring-landscape.png`: ilustración original anime, 1672 × 941.
+- `public/fonts/`, `public/cv/`, `public/screenshots/`: recursos existentes conservados.
+- `.mailmap`: unifica los alias Git del mismo propietario sin cambiar autorías.
+- `scripts/check-site.mjs`: comprobaciones de renderizado y recursos.
+- `scripts/prepare-history.py`: preparación local de una rama sin atribuciones adicionales; conserva cada árbol de archivos, crea un respaldo Git y nunca modifica el remoto. Requiere Python 3 y Git, solo para mantenimiento del historial.
 
-El panel del hero no necesita ningun servidor propio. Sus datos salen de:
+Ejemplo de secuencia:
 
-- **La API publica de GitHub**, en el navegador del visitante: repos
-  publicos, lenguaje mas usado y ultimo push (el repo con `pushed_at` mas
-  reciente). Automatico, sin token.
-- **`public/now.json`** para lo que solo tu sabes: `learning` (es/en). El navegador lo lee de la rama `main` en GitHub
-  (`raw.githubusercontent.com`), asi que basta con editar el archivo en
-  github.com y guardar: el tablero cambia sin volver a publicar la web.
-  `null` o vacio muestra "sin datos". Actualiza tambien `updated`.
+```jsx
+<p className="reveal" style={{ '--delay': '180ms' }}>
+  {t('spring.description')}
+</p>
+```
 
-## Contenido pendiente de Javier
+Las animaciones solo se activan con `prefers-reduced-motion: no-preference`; el contenido permanece visible sin animación.
 
-- Los casos de estudio (`case.problem` / `decision` / `result` en
-  `src/locales/*.json`) de JobHunter, SportEvent, FitDash y WinSvalinn
-  estan redactados a partir de los README de cada repo. Conviene leerlos
-  y corregir lo que no sea exacto.
-- Repasar los textos de `hero`, `about`, `homelab` y `contact`.
-- JobHunter esta destacado sin captura. Cuando haya una, guardarla como
-  `public/screenshots/projects/jobhunter.webp` y anadir `image`, `width`
-  y `height` a su entrada en `src/data/projects.js`.
-- Los repos `sportevent`, `servidor-pi` y `pyaws-practice` son privados o
-  no existen: por eso no tienen enlace a codigo. Si se hacen publicos,
-  basta con poner la URL en `src/data/projects.js`.
+## Datos del tablero
 
-Las capturas (`public/screenshots/projects/*.webp`) y los dos CV
-(`public/cv/`, uno por idioma) vienen de la version publicada anterior.
+La API pública de GitHub aporta repositorios, lenguaje y último push.
+`public/now.json` mantiene lo que estoy aprendiendo. Se consulta la versión remota en la rama `main` y se usa el archivo local como respaldo.
+Las fuentes y la ilustración no dependen de servicios externos.
 
-## Datos y contenido
+## Autoría y contribuciones
 
-- Texto: `src/locales/es.json` y `src/locales/en.json`.
-- Proyectos (URLs, stack, dimensiones de captura): `src/data/projects.js`.
-- Stack: `src/data/stack.js`.
-- Email, GitHub y LinkedIn: `src/data/socials.js`. El telefono no se publica.
+La interfaz, los datos de contacto y los metadatos muestran únicamente a Javier Maroto.
+El historial recibido contiene alias del mismo autor y atribuciones adicionales en mensajes de commits.
+La normalización de nombres en `.mailmap` no elimina atribuciones históricas de GitHub.
+
+Para cambiar los contribuidores calculados a partir del historial, se prepara una rama local con las atribuciones adicionales retiradas y se conserva la historia original. Su publicación exige revisar y autorizar la sustitución de la rama remota. No eliminar permisos de colaboradores ni atribuciones legales de dependencias para conseguir un cambio visual.
+
+Referencia: [Contribuidores de un proyecto — GitHub](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-a-projects-contributors).
+
+## Publicación
+
+Se conserva el despliegue existente a GitHub Pages: un push a `main` activa `.github/workflows/deploy.yml`, que instala, comprueba y publica `dist/`.
+La base de Vite sigue siendo `/portafolio/`. El favicon, las precargas de fuentes, las capturas, los CV y el paisaje usan esa base correctamente.
+
+Para otro alojamiento bajo la raíz del dominio:
+
+```sh
+npm run build -- --base=/
+```
+
+Servir únicamente `dist/`. No publicar `node_modules`, archivos de entorno, respaldos Git ni herramientas locales de limpieza de historial.
+No se han añadido autoarranques ni tareas programadas.

@@ -8,7 +8,8 @@ const STORAGE_KEY = 'jm-portafolio-lang'
 
 const getInitialLang = () => {
   if (typeof window === 'undefined') return 'es'
-  const stored = window.localStorage.getItem(STORAGE_KEY)
+  let stored
+  try { stored = window.localStorage.getItem(STORAGE_KEY) } catch { /* Use browser language. */ }
   if (stored === 'es' || stored === 'en') return stored
   const nav = window.navigator?.language || 'es'
   return nav.toLowerCase().startsWith('en') ? 'en' : 'es'
@@ -26,7 +27,7 @@ i18n.use(initReactI18next).init({
 
 i18n.on('languageChanged', (lng) => {
   if (typeof window !== 'undefined') {
-    window.localStorage.setItem(STORAGE_KEY, lng)
+    try { window.localStorage.setItem(STORAGE_KEY, lng) } catch { /* Storage may be disabled. */ }
     document.documentElement.lang = lng
   }
 })

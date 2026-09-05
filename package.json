@@ -1,5 +1,6 @@
 {
-  "name": "portafolio-v2",
+  "name": "portafolio-javier-maroto",
+  "author": "Javier Maroto (https://github.com/jv-maroto)",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,6 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "check": "node scripts/check-site.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

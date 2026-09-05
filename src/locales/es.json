@@ -160,5 +160,29 @@
   },
   "footer": {
     "scrollTop": "Volver arriba"
+  },
+  "spring": {
+    "portfolio": "Portfolio personal",
+    "available": "Disponible para nuevas oportunidades",
+    "role": "Desarrollador full-stack · Administrador de sistemas",
+    "hello": "Hola, soy",
+    "description": "Construyo aplicaciones con Python y cuido los sistemas que las hacen posibles. De la primera idea a un proyecto en marcha.",
+    "atAGlance": "Un poco de mí",
+    "noteTitle": "De los cimientos a la pantalla.",
+    "noteCopy": "Backend, interfaces e infraestructura. Me gusta entender cómo encaja todo, y hacer que funcione.",
+    "letsTalk": "Hablemos",
+    "moreAbout": "Más sobre mí, mi stack y lo que estoy haciendo",
+    "chapter": "Capítulo",
+    "backHome": "Volver al inicio",
+    "pauseMotion": "Pausar movimiento",
+    "resumeMotion": "Activar movimiento",
+    "caseStudy": "Leer caso de estudio",
+    "chapters": {
+      "top": "Sobre mí",
+      "projects": "Proyectos",
+      "homelab": "Servidor",
+      "experience": "Trayectoria",
+      "contact": "Contacto"
+    }
   }
 }

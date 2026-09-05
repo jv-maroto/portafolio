@@ -1,14 +1,9 @@
-// Todas las secciones comparten el mismo borde izquierdo (contenedor de 1040).
-// El texto se limita a 760 dentro, alineado a la izquierda, no centrado.
-export default function Section({ id, title, children, wide = false, band = false }) {
+export default function Section({ id, title, children }) {
+  const Heading = id === 'about' || id === 'stack' ? 'h2' : 'h1'
   return (
-    <section id={id} className={band ? 'bg-paper-2 py-14 sm:py-20' : 'py-14 sm:py-20'}>
-      <div className="mx-auto max-w-[1040px] px-6">
-        <div className={wide ? '' : 'max-w-[760px]'}>
-          <h2 className="mb-8 text-title font-medium">{title}</h2>
-          {children}
-        </div>
-      </div>
+    <section id={id} className="content-section" aria-labelledby={`${id}-title`}>
+      <Heading id={`${id}-title`} className="section-title reveal">{title}</Heading>
+      <div className="section-body reveal" style={{ '--delay': '100ms' }}>{children}</div>
     </section>
   )
 }

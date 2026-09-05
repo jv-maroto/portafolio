@@ -1,12 +1,5 @@
-import { useTranslation } from 'react-i18next'
+import { profile } from '../data/profile'
 
 export default function Footer() {
-  const { t } = useTranslation()
-  const year = new Date().getFullYear()
-  return (
-    <footer className="mx-auto flex max-w-[1040px] flex-wrap justify-between gap-4 px-6 py-10 text-sm text-ink-3">
-      <p className="m-0">&copy; {year} Javier Maroto</p>
-      <a href="#top">{t('footer.scrollTop')}</a>
-    </footer>
-  )
+  return <footer className="site-footer">&copy; {new Date().getFullYear()} {profile.name}<span aria-hidden="true"> · </span><a href="https://github.com/jv-maroto" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
 }

@@ -160,5 +160,29 @@
   },
   "footer": {
     "scrollTop": "Back to top"
+  },
+  "spring": {
+    "portfolio": "Personal portfolio",
+    "available": "Open to new opportunities",
+    "role": "Full-stack developer · Systems administrator",
+    "hello": "Hello, I'm",
+    "description": "I build Python applications and look after the systems that make them possible. From the first idea to a running project.",
+    "atAGlance": "A little about me",
+    "noteTitle": "From foundations to the screen.",
+    "noteCopy": "Backend, interfaces and infrastructure. I like understanding how everything fits together, and making it work.",
+    "letsTalk": "Let's talk",
+    "moreAbout": "More about me, my stack and what I'm working on",
+    "chapter": "Chapter",
+    "backHome": "Back to the beginning",
+    "pauseMotion": "Pause motion",
+    "resumeMotion": "Enable motion",
+    "caseStudy": "Read case study",
+    "chapters": {
+      "top": "About me",
+      "projects": "Projects",
+      "homelab": "Homelab",
+      "experience": "Journey",
+      "contact": "Contact"
+    }
   }
 }

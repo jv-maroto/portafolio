@@ -1,13 +1,15 @@
 import { useCallback, useSyncExternalStore } from 'react'
 
 const STORAGE_KEY = 'jm-portafolio-theme'
-const THEME_COLOR = { dark: '#1a1e23', light: '#f1f2f0' }
+const THEME_COLOR = { dark: '#182c28', light: '#fafcf6' }
 
-// Oscuro por defecto; la clase .light activa la alternativa.
+// Spring daylight by default; keep an existing explicit preference.
 const getInitial = () => {
-  if (typeof window === 'undefined') return 'dark'
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  return stored === 'dark' || stored === 'light' ? stored : 'dark'
+  if (typeof window === 'undefined') return 'light'
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY)
+    return stored === 'dark' || stored === 'light' ? stored : 'light'
+  } catch { return 'light' }
 }
 
 let theme = getInitial()
@@ -27,7 +29,7 @@ const reducedMotion = () =>
 const setTheme = (next) => {
   if (theme === next) return
   theme = next
-  if (typeof window !== 'undefined') window.localStorage.setItem(STORAGE_KEY, next)
+  try { window.localStorage.setItem(STORAGE_KEY, next) } catch { /* Storage may be disabled. */ }
 
   const swap = () => {
     applyTheme(next)
@@ -48,7 +50,7 @@ const subscribe = (listener) => {
   return () => listeners.delete(listener)
 }
 const getSnapshot = () => theme
-const getServerSnapshot = () => 'dark'
+const getServerSnapshot = () => 'light'
 
 export function useTheme() {
   const current = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)

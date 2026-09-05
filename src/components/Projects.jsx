@@ -11,14 +11,14 @@ export default function Projects() {
 
   return (
     <Section id="projects" title={t('projects.title')} wide>
-      <div>
+      <div className="featured-grid">
         {featured.map((p) => (
           <FeaturedProject key={p.id} project={p} />
         ))}
       </div>
 
       {rest.length > 0 && (
-        <div className="mt-16 max-w-[760px]">
+        <div className="mt-10">
           <h3 className="mb-6 text-lg font-semibold">{t('projects.moreTitle')}</h3>
           <ul className="m-0 list-none p-0">
             {rest.map((p) => (
