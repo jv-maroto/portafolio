@@ -34,6 +34,8 @@ Vista local: http://127.0.0.1:5173/portafolio/
 
 `npm run check` renderiza los cinco capítulos en ES/EN y comprueba identidad, capítulo activo, presencia de proyectos, CV y recursos locales del build. Requiere ejecutar `npm run build` primero. No sustituye una revisión visual en navegador.
 
+Después de actualizar dependencias en Windows, regenerar el lockfile con `npx npm@10 install --package-lock-only` y verificar `npx npm@10 ci --dry-run`. Esto incluye las dependencias opcionales de Linux que utiliza GitHub Actions.
+
 ## Archivos principales
 
 - `src/App.jsx`: navegación por fragmentos, panel central, progreso, foco y pausa de movimiento.
