@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="intro-copy">
         <p className="eyebrow reveal">{t('spring.role')}</p>
         <h1 id="intro-title" className="reveal" style={{ '--delay': '90ms' }}>
-          {t('spring.hello')}<br /><em>Javier.</em><span className="title-asterisk" aria-hidden="true">✳</span>
+          {t('spring.hello')}<br /><em>Javier.</em><span className="title-mark" aria-hidden="true">·</span>
         </h1>
         <p className="intro-description reveal" style={{ '--delay': '180ms' }}>{t('spring.description')}</p>
         <div className="intro-actions reveal" style={{ '--delay': '270ms' }}>
@@ -25,7 +25,7 @@ export default function Hero() {
           {profile.specialties.map(skill => <li key={skill}>{skill}</li>)}
         </ul>
         <a className="github-signature" href={socials.github} target="_blank" rel="noopener noreferrer">
-          <span className="github-dot" aria-hidden="true">⌘</span>@{profile.username}<span aria-hidden="true">↗</span>
+          <span className="github-dot" aria-hidden="true">●</span>@{profile.username}<span aria-hidden="true">↗</span>
         </a>
       </aside>
     </section>

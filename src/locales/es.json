@@ -162,7 +162,8 @@
     "scrollTop": "Volver arriba"
   },
   "spring": {
-    "portfolio": "Portfolio personal",
+    "portfolio": "Portfolio",
+    "home": "Volver al inicio",
     "available": "Disponible para nuevas oportunidades",
     "role": "Desarrollador full-stack · Administrador de sistemas",
     "hello": "Hola, soy",
@@ -173,6 +174,8 @@
     "letsTalk": "Hablemos",
     "moreAbout": "Más sobre mí, mi stack y lo que estoy haciendo",
     "chapter": "Capítulo",
+    "section": "Sección",
+    "activity": "Actividad reciente",
     "backHome": "Volver al inicio",
     "pauseMotion": "Pausar movimiento",
     "resumeMotion": "Activar movimiento",

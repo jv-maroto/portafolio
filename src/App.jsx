@@ -56,7 +56,7 @@ export default function App() {
           <nav className="chapter-nav" aria-label={t('nav.main')}>
             {CHAPTERS.map((id, i) => (
               <a key={id} href={`#${id}`} aria-current={chapter === id ? 'page' : undefined}>
-                <span className="chapter-number" aria-hidden="true">0{i + 1}</span>
+              <span className="chapter-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                 <span>{t(`spring.chapters.${id}`)}</span>
               </a>
             ))}
@@ -79,7 +79,7 @@ export default function App() {
             </div>
           </main>
           <div className="chapter-footer">
-            <span className="chapter-progress" aria-label={`${t('spring.chapter')} ${index + 1} / 5`}>
+            <span className="chapter-progress" aria-label={`${t('spring.section')} ${index + 1} / 5`}>
               {CHAPTERS.map((id, i) => <span key={id} className={i === index ? 'active' : ''} />)}
               <span className="progress-label">0{index + 1} / 05</span>
             </span>

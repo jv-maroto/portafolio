@@ -9,14 +9,6 @@ const BASE = import.meta.env.BASE_URL
 const GITHUB_REPOS = 'https://api.github.com/users/jv-maroto/repos?per_page=100'
 const NOW_REMOTE = 'https://raw.githubusercontent.com/jv-maroto/portafolio/main/public/now.json'
 
-const LOGO = String.raw`
-     ██╗███╗   ███╗
-     ██║████╗ ████║
-     ██║██╔████╔██║
-██   ██║██║╚██╔╝██║
-╚█████╔╝██║ ╚═╝ ██║
- ╚════╝ ╚═╝     ╚═╝`.trim()
-
 function relative(dateStr, lang) {
   if (!dateStr) return null
   const diff = (Date.now() - new Date(dateStr).getTime()) / 1000
@@ -76,22 +68,17 @@ export default function NowBoard() {
   ]
 
   return (
-    <aside aria-labelledby="now-title" className="board-enter bg-board p-6 font-mono text-[13px] leading-relaxed text-board-ink">
-      <h2 id="now-title" className="m-0 mb-4 text-[13px] font-medium">
-        <span className="opacity-75">jv-maroto</span> ~ $ neofetch
-      </h2>
-      <div className="flex flex-wrap gap-x-7 gap-y-4">
-        <pre aria-hidden="true" className="m-0 text-[11px] leading-[1.15]">{LOGO}</pre>
-        <dl className="m-0 grid min-w-[260px] flex-1 grid-cols-[max-content_1fr] gap-x-4 gap-y-1">
+    <aside aria-labelledby="now-title" className="now-board">
+      <div className="now-heading"><span className="note-index">02 —</span><h2 id="now-title">{t('spring.activity')}</h2></div>
+      <dl className="now-list">
           {rows.map(([label, value]) => (
-            <div key={label} className="contents">
-              <dt className="opacity-75">{label}</dt>
-              <dd className="m-0 min-w-0 break-words">{value}</dd>
+            <div key={label} className="now-row">
+              <dt>{label}</dt>
+              <dd>{value}</dd>
             </div>
           ))}
-        </dl>
-      </div>
-      <p className="mt-4 mb-0 text-xs opacity-75">
+      </dl>
+      <p className="now-source">
         {t('now.source')}
         {now?.updated ? ` · ${t('now.updated')} ${relative(now.updated, lang)}` : ''}
       </p>

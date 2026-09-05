@@ -162,7 +162,8 @@
     "scrollTop": "Back to top"
   },
   "spring": {
-    "portfolio": "Personal portfolio",
+    "portfolio": "Portfolio",
+    "home": "Back to home",
     "available": "Open to new opportunities",
     "role": "Full-stack developer · Systems administrator",
     "hello": "Hello, I'm",
@@ -173,6 +174,8 @@
     "letsTalk": "Let's talk",
     "moreAbout": "More about me, my stack and what I'm working on",
     "chapter": "Chapter",
+    "section": "Section",
+    "activity": "Recent activity",
     "backHome": "Back to the beginning",
     "pauseMotion": "Pause motion",
     "resumeMotion": "Enable motion",
